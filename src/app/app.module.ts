@@ -16,7 +16,7 @@ import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.com
     DashboardPageComponent,
     TicketsComponent,
     TicketListComponent,
-    CreateTicketComponent
+    CreateTicketComponent,
   ],
   imports: [
     BrowserModule,
