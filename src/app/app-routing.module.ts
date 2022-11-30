@@ -7,14 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardPageComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     component: TicketListComponent,
-    //   },
+    children: [
+      {
+        path: 'ticketlist',
+        component: TicketListComponent,
+      },
       
 
-    // ],
+    ],
   },
 ];
 

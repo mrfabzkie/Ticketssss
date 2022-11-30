@@ -12,12 +12,15 @@ export class DashboardPageComponent {
 
 
   constructor(
-    private dialog: MatDialog,
-    private router: Router) {}
+    private dialog: MatDialog, 
+    private router: Router,) {}
 
-  // openList(){
-  //   this.dialog.open(TicketListComponent,{
-  //     width:'40%', height:'63%'
-  //   })
+  // nav(destination: string) {
+  //   this.router.navigate([destination]);
   // }
+  openList(){
+    this.dialog.open(TicketListComponent,{
+      width:'40%', height:'63%'
+    })
+  }
 }
