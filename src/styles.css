@@ -1,5 +1,9 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 Body {
     Background: url("assets/background.jpg") no-repeat center fixed;
     background-size: cover;
     margin: 0;
   }
+
+  

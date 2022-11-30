@@ -18,9 +18,9 @@ export class DashboardPageComponent {
   // nav(destination: string) {
   //   this.router.navigate([destination]);
   // }
-  openList(){
+  openDialog(){
     this.dialog.open(TicketListComponent,{
-      width:'40%', height:'63%'
+      
     })
   }
 }
