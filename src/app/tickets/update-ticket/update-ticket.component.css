@@ -54,8 +54,22 @@
     margin-left: 10px;
 }
 
+form {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
 h1 {
     margin: 0;
+}
+
+.dropdown {
+    height: 40px;
+    margin-left: 20px;
+}
+
+#label {
+    margin-left: 55px;
 }
 
 .input {
@@ -70,3 +84,27 @@ h1 {
     background-color: #ffffff;
     resize: none;
   }
+
+  .buttoncreate{
+    position: fixed;
+    font-family: 'Arial';
+    color:white;
+    float: right;
+    margin-top:15px;
+    margin-right: 125px;
+    text-align: center;
+    background-color: #F12F2F;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.subj {
+    width: 20%;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.assign {
+    margin-left: 20px;
+}
