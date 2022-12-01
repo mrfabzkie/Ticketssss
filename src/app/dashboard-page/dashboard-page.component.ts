@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TicketListComponent } from '../tickets/ticket-list/ticket-list.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateTicketComponent } from '../tickets/update-ticket/update-ticket.component';
+import { CreateTicketComponent } from '../tickets/create-ticket/create-ticket.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -16,12 +17,15 @@ export class DashboardPageComponent {
     private dialog: MatDialog, 
     private router: Router,) {}
 
-  // nav(destination: string) {
-  //   this.router.navigate([destination]);
-  // }
-  openDialog(){
-    this.dialog.open(UpdateTicketComponent,{
-      
-    })
+
+
+  openDialog(toggle : string){
+    if (toggle == "update") {
+      this.dialog.open(UpdateTicketComponent,{});
+    } else if (toggle == "create") {
+      this.dialog.open(CreateTicketComponent,{});
+    } else if (toggle == "list") {
+      this.dialog.open(TicketListComponent, {});
+    }
   }
 }
