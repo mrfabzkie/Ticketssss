@@ -9,6 +9,7 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { TicketListComponent } from './tickets/ticket-list/ticket-list.component';
 import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { UpdateTicketComponent } from './tickets/update-ticket/update-ticket.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     TicketsComponent,
     TicketListComponent,
     CreateTicketComponent,
+    UpdateTicketComponent,
   ],
   imports: [
     BrowserModule,

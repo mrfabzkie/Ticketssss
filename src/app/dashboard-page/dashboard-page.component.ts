@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TicketListComponent } from '../tickets/ticket-list/ticket-list.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdateTicketComponent } from '../tickets/update-ticket/update-ticket.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -19,7 +20,7 @@ export class DashboardPageComponent {
   //   this.router.navigate([destination]);
   // }
   openDialog(){
-    this.dialog.open(TicketListComponent,{
+    this.dialog.open(UpdateTicketComponent,{
       
     })
   }
