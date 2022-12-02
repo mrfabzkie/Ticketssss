@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent {
+  constructor (
+    private router: Router,
+  ){}
 
+  nav(destination: string) {
+    this.router.navigate([destination]);
+  }
 }

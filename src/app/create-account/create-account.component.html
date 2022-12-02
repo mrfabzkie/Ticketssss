@@ -1,1 +1,40 @@
-<p>create-account works!</p>
+<div class="box"></div>
+
+<div class="redBox">
+    <div class="logo">
+        <img id="logo" src = "assets/logo.png" alt="alliance logo">    
+    </div>
+
+
+    <h1>Create Account</h1>
+    
+
+    <form>
+        <div class="input-container">
+            <input type="text" required=""/>
+            <label>Name</label>		
+        </div>
+
+        <div class="input-container">		
+            <input type="email" required=""/>
+            <label>Email</label>
+        </div>
+
+        <div class="input-container">		
+            <input type="password" required=""/>
+            <label>Password</label>
+        </div>
+    </form>	
+
+    <br/>
+
+    <button type='button' class="buttoncreate" (click)="nav('menu')">SignUp</button>
+    <br/>
+    <label style="margin-left: 4.6in;">already have an account? </label>
+    <button type="button" class="createaccount" routerLink="home" (click)="nav('login')">LOGIN</button>
+</div>
+
+
+
+
+
