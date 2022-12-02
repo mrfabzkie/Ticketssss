@@ -13,6 +13,7 @@ import { UpdateTicketComponent } from './tickets/update-ticket/update-ticket.com
 import { ViewTicketComponent } from './tickets/view-ticket/view-ticket.component';
 import { AddremTicketComponent } from './tickets/addrem-ticket/addrem-ticket.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     ViewTicketComponent,
     AddremTicketComponent,
     HomePageComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
