@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UpdateTicketComponent } from './tickets/update-ticket/update-ticket.component';
 import { ViewTicketComponent } from './tickets/view-ticket/view-ticket.component';
 import { AddremTicketComponent } from './tickets/addrem-ticket/addrem-ticket.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddremTicketComponent } from './tickets/addrem-ticket/addrem-ticket.com
     UpdateTicketComponent,
     ViewTicketComponent,
     AddremTicketComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
