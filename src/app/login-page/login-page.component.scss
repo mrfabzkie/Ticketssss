@@ -1,0 +1,125 @@
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: .5;
+
+}
+
+.redBox {
+    background: rgba(255, 0, 0, 0.6);
+    position: relative;
+    margin: auto;
+    margin-top: 80px;
+    height:80%;
+    width:70%;
+    border-radius: 20px;
+    
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 190px;
+    height: 80px;
+    left: 20px;
+    top: 10px;
+  }
+  
+#logo {
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 5px;
+    height: 43px;
+    z-index: 1;
+    margin: 5%;
+}
+
+.title {
+    text-align: center;
+}
+
+h1 {
+  padding-top: 40px;
+}
+
+h1, h2 {
+    margin: auto;
+    margin-bottom: 40px;
+    font-size: 32pt;
+    font-weight: 10pt;
+}
+
+.text-center{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+  margin-left: 251px;
+	font-size:16px;
+	color:#fff;	
+  transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:2px solid black;  
+  background:transparent;
+  margin-left: 246px;
+  width:50%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:2px solid #e74c3c;	
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+
+.buttoncreate{
+  color:white;
+  // border: none;
+  margin-top:15px;
+  text-align: center;
+  background-color: #F12F2F;
+  width: 249px;
+  height: 50px;
+  left: 1145px;
+  top: 803px;
+  margin-left: 39%;
+  border-radius: 10px;
+}
+
+.createaccount{
+  margin-top: 20px;
+  margin-left: 5.1in;
+  background: none;
+  border: none;
+}
+.createaccount:hover {
+  color: whitesmoke;
+}
