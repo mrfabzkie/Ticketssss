@@ -10,6 +10,7 @@ import { TicketListComponent } from './tickets/ticket-list/ticket-list.component
 import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UpdateTicketComponent } from './tickets/update-ticket/update-ticket.component';
+import { ViewTicketComponent } from './tickets/view-ticket/view-ticket.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UpdateTicketComponent } from './tickets/update-ticket/update-ticket.com
     TicketListComponent,
     CreateTicketComponent,
     UpdateTicketComponent,
+    ViewTicketComponent,
   ],
   imports: [
     BrowserModule,

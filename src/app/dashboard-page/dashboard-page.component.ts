@@ -4,6 +4,7 @@ import { TicketListComponent } from '../tickets/ticket-list/ticket-list.componen
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateTicketComponent } from '../tickets/update-ticket/update-ticket.component';
 import { CreateTicketComponent } from '../tickets/create-ticket/create-ticket.component';
+import { ViewTicketComponent } from '../tickets/view-ticket/view-ticket.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -26,6 +27,8 @@ export class DashboardPageComponent {
       this.dialog.open(CreateTicketComponent,{});
     } else if (toggle == "list") {
       this.dialog.open(TicketListComponent, {});
+    } else if (toggle == "view") {
+      this.dialog.open(ViewTicketComponent, {});
     }
   }
 }
