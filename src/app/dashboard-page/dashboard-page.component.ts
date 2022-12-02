@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdateTicketComponent } from '../tickets/update-ticket/update-ticket.component';
 import { CreateTicketComponent } from '../tickets/create-ticket/create-ticket.component';
 import { ViewTicketComponent } from '../tickets/view-ticket/view-ticket.component';
+import { AddremTicketComponent } from '../tickets/addrem-ticket/addrem-ticket.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -29,6 +30,8 @@ export class DashboardPageComponent {
       this.dialog.open(TicketListComponent, {});
     } else if (toggle == "view") {
       this.dialog.open(ViewTicketComponent, {});
+    } else if (toggle == "addrem") {
+      this.dialog.open(AddremTicketComponent, {});
     }
   }
 }
