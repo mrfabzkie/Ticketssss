@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: DashboardPageComponent,
     children: [
-      {
-        path: 'ticketlist',
-        component: TicketListComponent,
-      },
       
 
     ],
