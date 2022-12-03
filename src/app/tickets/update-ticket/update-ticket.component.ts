@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UpdateTicketComponent {
   
-  status:boolean = false;
+  status:boolean = true;
   assignee:boolean = false;
   ticket:boolean = false;
 
@@ -25,8 +25,5 @@ export class UpdateTicketComponent {
       this.status = false;
       this.assignee = false;
     }
-    // this.status= !this.status;
-    // 
-    // this.ticket = !this.ticket;
   }
 }
