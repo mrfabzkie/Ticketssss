@@ -12,9 +12,22 @@ table {
   
   tr:nth-child(even) {
     background-color: #dddddd;
+    color: black;
 }
 
 h1 {
     margin-top: 0;
     margin-bottom: 0;
+    
+}
+
+.ticket-body{
+font-family: chathura;
+background-color: gray;
+position: absolute;
+margin-top: -28.5%;
+margin-left: 25%;
+padding-left: 0px;
+width: 70%;
+height: 400px;
 }

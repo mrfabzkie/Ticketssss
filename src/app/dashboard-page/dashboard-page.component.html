@@ -12,16 +12,23 @@
   </div>
 
 <div class="btns">
-    <button class="dashbtn" (click)="openDialog('list')">TICKET LIST</button>
     <br>
-    <button class="dashbtn" (click)="openDialog('create')">CREATE TICKET</button>
+    <button class="dashbtn" (click)="openDialog('create')">CREATE</button>
     <br>
-    <button class="dashbtn" (click)="openDialog('update')">UPDATE TICKET</button>
+    <button class="dashbtn" (click)="openDialog('update')">UPDATE</button>
     <br>
-    <button class="dashbtn" (click)="openDialog('view')">VIEW TICKET</button>
+    <button class="dashbtn" (click)="openDialog('view')">VIEW SPECIFIC TICKET</button>
     <br>
-    <button class="dashbtn" (click)="openDialog('addrem')" style = "font-size: 40pt;">ADD REMINDER FOR AGING TICKETS</button>  
+    <button class="dashbtn" (click)="openDialog('addrem')" style = "font-size: 30 pt;">ADD REMINDER</button>  
+    <button class="dashbtn" (click)="openDialog('view')">EXPORT</button>
+    <br>
+   
+   
     <!-- <button class="dashbtn">TICKET WORKFLOW</button> -->
-</div>
 
-<div class="list-ticket"></div>
+    <div class="list-ticket">
+
+      <app-ticket-list></app-ticket-list>
+    </div>
+  </div>
+
