@@ -42,7 +42,7 @@
     
     
   }
-  
+    
   h3 {
    
     color: white;
@@ -68,16 +68,17 @@
     font-family: 'Chathura' ;
     border-radius:25px;
     margin-bottom: 20px;
-    margin-left: 150px;
-    margin-right: 61px;
+    margin-left: 65px;
+    margin-right: 30  px;
     padding-top: -10px;
+    margin-top: -5px;
     height: 93px;
     color: aliceblue;
-    width: 5.5in;
-    background: rgba(36, 9, 9, 0.9);
+    width: 3in;
+    background: rgba(241, 5, 5, 0.9);
     backdrop-filter: blur(2px);
     cursor: pointer;
-    font-size: 70px;  
+    font-size: 40px;  
     letter-spacing: 0.005em;
     line-height: 100%;
   }
@@ -106,7 +107,7 @@
   font-size: 100px;
   padding-left: 63px;
   margin-top: .2%;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
   padding-top: 1%;
   letter-spacing: 5px;
   line-height: 50px;
