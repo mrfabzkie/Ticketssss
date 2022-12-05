@@ -1,0 +1,88 @@
+.navbar {
+    height: 150px;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.6;
+  }
+  
+  .logo {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 355px;
+    height: 130px;
+    left: 68px;
+    top: 10px
+  }
+  
+  #logo {
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 5px;
+    height: 80px;
+    z-index: 1;
+    margin: 5%;
+  }
+  
+  .red {
+  
+    position: absolute;
+    margin-top: 38px;
+    margin-left: 30%;
+    height: 70px;
+    width: 70%;
+    z-index: 1;
+    background-color: red;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    
+    
+  }
+  
+  h3 {
+   
+    color: white;
+    margin-top: 23px;
+    margin-left: 10px;
+    font-family: 'Chathura';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 25px;
+    letter-spacing: 5px;
+    padding-left: 15px;
+  }
+
+  .content p{
+    font-family: 'Chathura' ;
+    font-style: normal;
+    color: white;
+    font-size: 100px;
+    padding-left: 63px;
+    margin-top: .2%;
+    margin-bottom: 2%;
+    padding-top: 1%;
+    letter-spacing: 5px;
+    line-height: 50px;
+  
+  }
+
+  .dashboard-card{
+    padding-left: 63px;
+    cursor: pointer;
+
+  }
+
+  .dashboard-card h2{
+    padding-left: 63px;
+    font-size: 30px;
+    font-family: 'Chathura' ;
+    width: 174px;
+    height: 50px;
+    margin-top: 0;
+    background-color: #240909;
+    color:white;
+    border-radius: 0px 0px 10px 10px;
+  }

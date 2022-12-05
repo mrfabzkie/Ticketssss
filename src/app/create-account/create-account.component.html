@@ -5,16 +5,19 @@
         <img id="logo" src = "assets/logo.png" alt="alliance logo">    
     </div>
 
-    <div class="title">
-       <h1>USER LOG IN</h1>
-        <h2>Welcome!</h2> 
-    </div>
+
+    <h1>Create Account</h1>
     
 
     <form>
         <div class="input-container">
+            <input type="text" required=""/>
+            <label>Name</label>		
+        </div>
+
+        <div class="input-container">		
             <input type="email" required=""/>
-            <label>Email</label>		
+            <label>Email</label>
         </div>
 
         <div class="input-container">		
@@ -25,9 +28,10 @@
 
     <br/>
 
-    <button type='button' class="buttoncreate" (click)="nav('home')">LOGIN</button>
+    <button type='button' class="buttoncreate" (click)="nav('menu')">SignUp</button>
     <br/>
-    <button type="button" class="createaccount" (click)="nav('create-account')">Create an Account</button>
+    <label style="margin-left: 4.6in;">already have an account? </label>
+    <button type="button" class="createaccount" (click)="nav('login')">LOGIN</button>
 </div>
 
 

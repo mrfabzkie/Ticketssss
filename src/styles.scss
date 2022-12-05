@@ -1,0 +1,57 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+Body {
+    Background: url("assets/background.jpg") no-repeat center fixed;
+    background-size: cover;
+    // font-family: 'Chathura';
+    margin: 0;
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+
+    background-color: #000;
+    opacity: 0.75;
+
+    z-index: 900;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    overflow: x;
+}
+
+.modal-body {
+    position: absolute;
+    width: 1082px;
+    height: 555px;
+    left: 207px;
+    top: 70px;
+
+    background: #2F2F2F;
+    border-radius: 71px;
+
+    // font-family: 'Chathura';
+    font-style: normal;
+    font-weight: 70;
+    font-size: 42px;
+    text-align: center;
+    letter-spacing: 0.005em;
+
+    color: #FFFFFF;
+
+}
+
+  

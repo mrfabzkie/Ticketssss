@@ -1,0 +1,41 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid rgb(49, 45, 45);
+    text-align: left;
+    padding: 8px;
+    
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+    color: black;
+}
+
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+
+.ticket-body{
+font-family: chathura;
+background-color: gray;
+position: absolute;
+margin-top: -30.5%;
+margin-left: 25%;
+padding-left: 0px;
+width: 70%;
+height: 400px;
+overflow:scroll;
+}
+.ticket-body th{
+  border: none;
+}
+
+
