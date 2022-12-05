@@ -1,75 +1,24 @@
-
-
-
-
-    <div class="ticket-body">
-       
-        <table class="table">
-            <tr>
-                <th>TRACKER</th>
-                <th>TICKET ID</th>
-                <th>SUBJECT</th>
-            </tr>
-            <tr>
-                <td>Payroll</td>
-                <td>1</td>
-                <td>Have not received payroll</td>
-            </tr>
-            <tr>
-                <td>Recruitment</td>
-                <td>2</td>
-                <td>New Interns</td>
-            </tr>
-            <tr>
-                <td>Memo</td>
-                <td>3</td>
-                <td>For the event</td>
-            </tr>
-            <tr>
-                <td>Other</td>
-                <td>4</td>
-                <td>Monthly meeting</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-            <tr>
-                <td>Benefits</td>
-                <td>5</td>
-                <td>PhilHealth</td>
-            </tr>
-        </table>
-    </div>
-
+<div class="ticket-body">
+  <table class="table">
+    <thead>
+        <tr>
+          <th>TICKET ID</th>
+          <th>TRACKER</th>
+          <th>STATUS</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+    <tbody *ngFor="let ticket of tickets$; index as i">
+      <tr [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
+        <td>{{ ticket["ticketID"] }}</td>
+        <td>{{ ticket["tracker"] }}</td>
+        <td>{{ ticket["status"] }}</td>
+        <td>
+          <button class="custom-text-button">View Info</button>
+          <button class=" custom-delete-button"><span class="material-symbols-outlined"> delete </span></button>
+          <button class="custom-edit-button"><span class="material-symbols-outlined"> edit </span></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
