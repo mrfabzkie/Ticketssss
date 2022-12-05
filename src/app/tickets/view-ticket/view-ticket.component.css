@@ -1,27 +1,64 @@
 h1 {
-    margin: 0;
+    margin:  0;
+    padding: 0;
 }
 
 table {
     border-collapse: collapse;
     width: 70%;
-    font-size: 25pt;
+    font-size: 15pt;
     
     margin-left: auto;
     margin-right: auto;
   }
   
   td {
-    border-bottom: 1px solid #dddddd;
+    border-top: 2px solid #FC3030;
     text-align: left;
-    padding: 8px;
+    padding: 7px;
     color: white;
   }
 
   th {
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #dddddd;
+    border-right: 2px solid #FC3030;
+    border-top: 2px solid #FC3030;
     text-align: left;
-    padding: 8px;
+    padding: 7px;
     color: white;
   }
+
+  #input-ticketID{
+    margin-left: 2%;
+    height: 40px;
+    width: 50%;
+    border-radius: 15px;
+  }
+
+  #input-ticketID:focus{
+    outline: none;
+  }
+
+  .custom-red-round-button{
+    height: 40px;
+    width: 100px;
+    margin-left: 2%;
+    border-radius: 20px;
+    border: none;
+    background-color: #F12F2F;
+    color: white;
+    font-family: 'Chathura';
+    font-style: normal;
+    font-size: 30;
+    text-align: center;
+    vertical-align:middle;
+    line-height: 10px;
+    box-sizing: border-box; 
+  }
+
+  .creation-details{
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 35;
+  }
+
