@@ -11,21 +11,21 @@
     </div>
     
 
-    <form>
+    <form [formGroup]="form">
         <div class="input-container">
-            <input type="email" required=""/>
+            <input type="email" required="" formControlName="userID" />
             <label>Email</label>		
         </div>
 
         <div class="input-container">		
-            <input type="password" required=""/>
+            <input type="password" required="" formControlName="password" />
             <label>Password</label>
         </div>
     </form>	
 
     <br/>
 
-    <button type='button' class="buttoncreate" (click)="nav('home')">LOGIN</button>
+    <button type='button' class="buttoncreate" (click)="onSubmit()">LOGIN</button>
     <br/>
     <button type="button" class="createaccount" (click)="nav('create-account')">Create an Account</button>
 </div>
