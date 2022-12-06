@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-addrem-ticket',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./addrem-ticket.component.scss']
 })
 export class AddremTicketComponent {
+  
+  @Output() remindStatus = new EventEmitter<boolean>();
 
+
+  onClose() {
+    this.remindStatus.emit(false);
+  }
 }
+
