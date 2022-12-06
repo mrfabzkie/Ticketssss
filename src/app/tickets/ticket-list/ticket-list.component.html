@@ -1,24 +1,37 @@
 <div class="ticket-body">
   <table class="table">
     <thead>
-        <tr>
-          <th>TICKET ID</th>
-          <th>TRACKER</th>
-          <th>STATUS</th>
-          <th>ACTIONS</th>
-        </tr>
-      </thead>
+      <tr>
+        <th>TICKET ID</th>
+        <th>TRACKER</th>
+        <th>STATUS</th>
+        <th>ACTIONS</th>
+      </tr>
+    </thead>
     <tbody *ngFor="let ticket of tickets$; index as i">
       <tr [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
         <td>{{ ticket["ticketID"] }}</td>
         <td>{{ ticket["tracker"] }}</td>
         <td>{{ ticket["status"] }}</td>
         <td>
-          <button class="custom-text-button" (click)="onClickView(i)">View Info</button>
-          <button class=" custom-delete-button"><span class="material-symbols-outlined"> delete </span></button>
-          <button class="custom-edit-button"><span class="material-symbols-outlined"> edit </span></button>
+          <button class="custom-text-button" (click)="onClickView(i)">
+            View Info
+          </button>
+          <button class="custom-delete-button">
+            <span class="material-symbols-outlined"> delete </span>
+          </button>
+          <button class="custom-edit-button">
+            <span class="material-symbols-outlined"> edit </span>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div *ngIf="isViewing">
+  <app-view-ticket
+    [viewedTicket]="selectedTicket"
+    (viewStatus)="viewStatus($event)"
+  ></app-view-ticket>
 </div>
