@@ -13,7 +13,7 @@
 
 <div class="body-div">
   <div class="buttons-div">
-    <button class="dashbtn">CREATE</button>
+    <button class="dashbtn" (click)="onCreateTicket()">CREATE</button>
     <button class="dashbtn" style="font-size: 30 pt">ADD REMINDER</button>
     <button class="dashbtn">EXPORT</button>
 
@@ -45,4 +45,11 @@
     </div>
     <app-ticket-list></app-ticket-list>
   </div>
+
+</div>
+
+<div *ngIf="isCreating"> 
+  <app-create-ticket
+  
+  ></app-create-ticket>
 </div>

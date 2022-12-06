@@ -18,7 +18,8 @@ export class DashboardPageComponent {
   constructor(
     private dialog: MatDialog, 
     private router: Router,) {}
-
+    
+    isCreating: boolean = false;
 
 
   openDialog(toggle : string){
@@ -34,4 +35,9 @@ export class DashboardPageComponent {
       this.dialog.open(AddremTicketComponent, {});
     }
   }
+
+  onCreateTicket(){
+    this.isCreating = true;
+  }
+
 }
