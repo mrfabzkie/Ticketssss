@@ -14,7 +14,7 @@
         <td>{{ ticket["tracker"] }}</td>
         <td>{{ ticket["status"] }}</td>
         <td>
-          <button class="custom-text-button">View Info</button>
+          <button class="custom-text-button" (click)="onClickView(i)">View Info</button>
           <button class=" custom-delete-button"><span class="material-symbols-outlined"> delete </span></button>
           <button class="custom-edit-button"><span class="material-symbols-outlined"> edit </span></button>
         </td>
