@@ -1,34 +1,48 @@
 <div class="red">
-    <h3>HOME</h3>
+  <h3>HOME</h3>
 </div>
-  
+
 <div class="logo">
-  <img id="logo" src = "assets/logo.png" alt="alliance logo">    
+  <img id="logo" src="assets/logo.png" alt="alliance logo" />
 </div>
-  
-  <div class="navbar"></div>
-  <div class="content">
-    <p>TICKET MANAGEMENT </p>
-  </div>
 
-<div class="btns">
-    <br>
-    <button class="dashbtn" (click)="openDialog('create')">CREATE</button>
-    <br>
-    <button class="dashbtn" (click)="openDialog('update')">UPDATE</button>
-    <br>
-    <button class="dashbtn" (click)="openDialog('view')">VIEW SPECIFIC TICKET</button>
-    <br>
-    <button class="dashbtn" (click)="openDialog('addrem')" style = "font-size: 30 pt;">ADD REMINDER</button>  
-    <button class="dashbtn" (click)="openDialog('view')">EXPORT</button>
-    <br>
-   
-   
+<div class="navbar"></div>
+<div class="content">
+  <p>TICKET MANAGEMENT</p>
+</div>
+
+<div class="body-div">
+  <div class="buttons-div">
+    <button class="dashbtn">CREATE</button>
+    <button class="dashbtn" style="font-size: 30 pt">ADD REMINDER</button>
+    <button class="dashbtn">EXPORT</button>
+
     <!-- <button class="dashbtn">TICKET WORKFLOW</button> -->
-
-    <div class="list-ticket">
-
-      <app-ticket-list></app-ticket-list>
-    </div>
   </div>
 
+  <div class="ticket-list-div">
+    <div class="bars-and-filters-div">
+      <input
+        type="text"
+        class="custom-search-bar bars-and-filters-elements"
+        placeholder="Search..."
+      />
+      <button class="custom-button bars-and-filters-elements">SEARCH</button>
+      <select
+        name="tracker"
+        id="tracker-select"
+        class="custom-dropdown bars-and-filters-elements"
+      >
+        <option value="BEN">Benefits</option>
+      </select>
+      <select
+        name="assignee"
+        id="assignee-select"
+        class="custom-dropdown bars-and-filters-elements"
+      >
+        <option value="1">Fabby Nee-chan</option>
+      </select>
+    </div>
+    <app-ticket-list></app-ticket-list>
+  </div>
+</div>
