@@ -1,95 +1,50 @@
 <div class="modal">
     <div class="modal-body">
-        <h1>Update Ticket</h1>
+        <h2>Update Ticket</h2>
 
-        <button class="updatebtn" (click)="onClick('status')">status</button>
-        <button class="updatebtn" (click)="onClick('assignee')">assignee</button>
-        <button class="updatebtn" (click)="onClick('ticket')">ticket</button>
-
-        <ng-container *ngIf="status; then stat;"></ng-container>
-        <ng-container *ngIf="assignee; then ass;"></ng-container>
-        <ng-container *ngIf="ticket; then tick;"></ng-container>
-
-        <ng-template #stat>
+        <h3>Ticket ID: 2013001690</h3>
+        
             <form>
-                <label for="ticketId">Ticket ID</label>
-                <input type="text" class="input" id="label">
-                <br/>
-                <label for="oldAssignee">Old Status</label>
-                <input type="text" class="input">
-                <br/>
-                <label for="newAssignee">New Status</label>
                 <select class="dropdown">
-                    <option value="1"></option>
-                    <option value="2">In Progress</option>
-                    <option value="3">Resolved</option>
-                    <option value="4">Feedback</option>
-                    <option value="5">Closed</option>
-                    <option value="6">Rejected</option>
+                    <option value="1">Tracker</option>
+                    <option value="2">Benefits</option>
+                    <option value="3">Payroll</option>
+                    <option value="4">Recruitment</option>
+                    <option value="5">Training</option>
+                    <option value="6">PES</option>
+                    <option value="6">Employee Relation</option>
+                    <option value="6">MEMO</option>
+                    <option value="6">COE</option>
+                    <option value="6">Engagement(RNR)</option>
+                    <option value="6">Policy</option>
+                    <option value="6">Others</option>
+                    <option value="6">HR Business Partner</option>
                 </select>
-            </form>  
-        </ng-template>
-
-        <ng-template #ass>
-            <form>
-                <label for="ticketId">Ticket ID</label>
-                <input type="text" class="input" id="label">
-                <br/>
-                <label for="oldAssignee">Old Assignee</label>
-                <input type="text" class="input">
-                <br/>
-                <label for="newAssignee">New Assignee</label>
+                
                 <select class="dropdown">
-                    <option value="1"></option>
+                    <option value="1">Assignee</option>
                     <option value="2">Saturnina Alvarez</option>
                     <option value="3">Rejine Alquisa</option>
                     <option value="4">Pelissa Jane Ligalig</option>
                     <option value="5">Ma. Giselle Mabunga</option>
                     <option value="6">Jasmine Patalinghug</option>
                 </select>
-            </form>
-        </ng-template>
 
-        <ng-template #tick>
-            <form>
-                <label for="tracker">Tracker</label>
-                    <select class="dropdown">
-                        <option value="1"></option>
-                        <option value="2">Benefits</option>
-                        <option value="3">Payroll</option>
-                        <option value="4">Recruitment</option>
-                        <option value="5">Training</option>
-                        <option value="6">PES</option>
-                        <option value="6">Employee Relation</option>
-                        <option value="6">MEMO</option>
-                        <option value="6">COE</option>
-                        <option value="6">Engagement(RNR)</option>
-                        <option value="6">Policy</option>
-                        <option value="6">Others</option>
-                        <option value="6">HR Business Partner</option>
-                    </select>
-                
-                <label for="assignee" class="assign">Assignee</label>
-                    <select class="dropdown">
-                        <option value="1"></option>
-                        <option value="2">Saturnina Alvarez</option>
-                        <option value="3">Rejine Alquisa</option>
-                        <option value="4">Pelissa Jane Ligalig</option>
-                        <option value="5">Ma. Giselle Mabunga</option>
-                        <option value="6">Jasmine Patalinghug</option>
-                    </select>
-                <label for="subj" class="assign">Select a Subject</label>
-                <input type="text" class="subj"/>
-                <br/>
-                <textarea rows="10" cols="80" id="description"></textarea>
-                
+                <select class="dropdown">
+                    <option value="1">Status</option>
+                    <option value="2">In Progress</option>
+                    <option value="3">Resolved</option>
+                    <option value="4">Feedback</option>
+                    <option value="5">Closed</option>
+                    <option value="6">Rejected</option>
+                </select>
             </form>
+
+            <input placeholder="Subject" type="text" class="intsubject"/>
+            <textarea placeholder="message..." rows="10" cols="80" id="description" class="inttext"></textarea>
+            <br/>
             
-        </ng-template>
-
-        
-
-        <button type='button' class="buttoncreate">CREATE</button>
+            <button type='button' class="buttoncreate">CREATE</button>
     </div>
 </div>
 <div class="modal-background"></div>
