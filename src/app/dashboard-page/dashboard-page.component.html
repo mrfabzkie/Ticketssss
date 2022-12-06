@@ -59,3 +59,9 @@
   
   ></app-addrem-ticket>
 </div>
+
+<div *ngIf="isCreating">
+  <app-create-ticket
+    (createStatus)="createStatus($event)"
+  ></app-create-ticket>
+</div>

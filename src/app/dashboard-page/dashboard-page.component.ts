@@ -44,4 +44,8 @@ export class DashboardPageComponent {
   onRemindTicket(){
     this.isReminding = true;
   }
+
+  createStatus(value: any){
+    this.isCreating = value;
+  }
 }

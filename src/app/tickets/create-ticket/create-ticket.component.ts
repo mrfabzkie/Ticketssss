@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-ticket',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-ticket.component.css']
 })
 export class CreateTicketComponent {
+  
+  @Output() createStatus = new EventEmitter<boolean>();
 
+
+  onClose() {
+    this.createStatus.emit(false);
+  }
 }
+
