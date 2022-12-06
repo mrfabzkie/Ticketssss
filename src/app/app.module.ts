@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ViewTicketComponent } from './tickets/view-ticket/view-ticket.component
 import { AddremTicketComponent } from './tickets/addrem-ticket/addrem-ticket.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,9 @@ import { CreateAccountComponent } from './create-account/create-account.componen
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatDialogModule,
   ],

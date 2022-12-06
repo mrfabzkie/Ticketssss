@@ -1,30 +1,36 @@
-<div class="modal">
-    <div class="modal-body">
-        <h1>View Ticket</h1>
-
-        <table>
-            <tr>
-              <th style="width: 20px;height: 40px">Tracker</th>
-              <td ></td>
-            </tr>
-            <tr>
-                <th>Ticket ID</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Subject</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Assignee</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td></td>
-            </tr>
-        </table> 
-        
+<div class="modal" id="view-ticket-modal">
+  <div class="modal-body">
+    <h1>View Ticket</h1>
+    <div>
+      <span>
+        <label for="input-ticketID">TICKED ID:</label>
+        <input type="text" id="input-ticketID" name="input-ticketID" />
+        <button type="submit" class="custom-red-round-button">SEARCH</button>
+      </span>
     </div>
+    <div>
+      <div class="creation-details">Created by: Fabby Nee-Chaan</div>
+      <div class="creation-details">Created on: Dec 12, 2022</div>
+    </div>
+    <table>
+      <tr>
+        <th style="width: 20px; height: 40px">Tracker</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Assignee</th>
+        <td> {{ viewedTicket.assignee }} </td>
+      </tr>
+      <tr>
+        <th>Subject</th>
+        <td>{{ viewedTicket.subject }}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td> {{ viewedTicket.description }} </td>
+      </tr>
+    </table>
+    <button type="close" class="custom-red-round-button" id="closeModal" data-dismiss="modal" (click)="onClose()">CLOSE</button>
+  </div>
 </div>
-<div class="modal-background"></div>
+<div class="modal-background" id="view-ticket-modal-background"></div>
