@@ -65,3 +65,9 @@
     (createStatus)="createStatus($event)"
   ></app-create-ticket>
 </div>
+
+<div *ngIf="isReminding">
+  <app-addrem-ticket
+    (remindStatus)="remindStatus($event)"
+  ></app-addrem-ticket>
+</div>

@@ -48,4 +48,8 @@ export class DashboardPageComponent {
   createStatus(value: any){
     this.isCreating = value;
   }
+
+  remindStatus(value: any){
+    this.isReminding = value;
+  }
 }
