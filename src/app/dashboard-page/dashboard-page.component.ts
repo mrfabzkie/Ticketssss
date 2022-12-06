@@ -18,8 +18,9 @@ export class DashboardPageComponent {
   constructor(
     private dialog: MatDialog, 
     private router: Router,) {}
-    
+
     isCreating: boolean = false;
+    isReminding: boolean = false;
 
 
   openDialog(toggle : string){
@@ -40,4 +41,7 @@ export class DashboardPageComponent {
     this.isCreating = true;
   }
 
+  onRemindTicket(){
+    this.isReminding = true;
+  }
 }

@@ -14,7 +14,7 @@
 <div class="body-div">
   <div class="buttons-div">
     <button class="dashbtn" (click)="onCreateTicket()">CREATE</button>
-    <button class="dashbtn" style="font-size: 30 pt">ADD REMINDER</button>
+    <button class="dashbtn" style="font-size: 30 pt" (click)="onRemindTicket()">ADD REMINDER</button>
     <button class="dashbtn">EXPORT</button>
 
     <!-- <button class="dashbtn">TICKET WORKFLOW</button> -->
@@ -52,4 +52,10 @@
   <app-create-ticket
   
   ></app-create-ticket>
+</div>
+
+<div *ngIf="isReminding"> 
+  <app-addrem-ticket
+  
+  ></app-addrem-ticket>
 </div>
