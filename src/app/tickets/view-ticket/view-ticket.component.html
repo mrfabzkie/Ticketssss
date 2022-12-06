@@ -19,15 +19,15 @@
       </tr>
       <tr>
         <th>Assignee</th>
-        <td></td>
+        <td> {{ viewedTicket.assignee }} </td>
       </tr>
       <tr>
         <th>Subject</th>
-        <td></td>
+        <td>{{ viewedTicket.subject }}</td>
       </tr>
       <tr>
         <th>Description</th>
-        <td></td>
+        <td> {{ viewedTicket.description }} </td>
       </tr>
     </table>
     <button type="close" class="custom-red-round-button" id="closeModal" data-dismiss="modal" (click)="onClose()">CLOSE</button>
