@@ -17,21 +17,32 @@
 
         <div class="input-container">		
             <input type="text" required=""/>
-            <label>Email</label>
+            <label>UserID</label>
         </div>
 
         <div class="input-container">		
             <input type="password" required=""/>
             <label>Password</label>
         </div>
+        <div class="select-container">		
+            <select> 
+        <option>ROLE
+        </option>
+
+            </select>  
+            
+        </div>
     </form>	
 
     <br/>
 
-    <button type='button' class="buttoncreate" (click)="nav('menu')">SignUp</button>
+    <button type='button' class="buttoncreate" (click)="nav('menu')">SIGN UP</button>
     <br/>
-    <label style="margin-left: 4.6in;">already have an account? </label>
-    <button type="button" class="createaccount" (click)="nav('login')">LOGIN</button>
+    <div class="already-account">
+        <label style="margin-left: 4.6in;">already have an account? </label>
+        <button type="button" class="createaccount" (click)="nav('login')">LOGIN</button>
+    </div>
+   
 </div>
 
 
