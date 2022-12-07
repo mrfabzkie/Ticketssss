@@ -55,6 +55,8 @@ h1, h2 {
     margin-bottom: 40px;
     font-size: 32pt;
     font-weight: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 50px;
 }
 
 .text-center{
@@ -70,7 +72,6 @@ h1, h2 {
 .input-container{
 	position:relative;
 	margin-bottom:25px;
-  margin-left: 160px;
   
 }
 .input-container label{
@@ -122,7 +123,7 @@ h1, h2 {
   background-color: #F12F2F;
   width: 249px;
   height: 50px;
-  margin-left: 39%; 
+  margin-left: 41%; 
   border-radius: 10px;
   padding-bottom: 62px;
   font-size: 30pt;
@@ -138,14 +139,14 @@ hr{
     margin-top:0px;
   width: 133px;
   padding-left: 0px;
-  margin-right: 626px;
+  margin-right: 609px;
 
 }
 .createaccount{
   transition: .5s;
   font-family: Chathura;
   margin-top: 10px;
-  margin-left: 6in;
+  margin-left: 6.2in;
   background: none;
   border: none;
   color: #fff;
@@ -155,4 +156,9 @@ hr{
 }
 .createaccount:hover {
   color: rgb(155, 155, 155);
+}
+
+form{
+  margin-left: 200;
+
 }

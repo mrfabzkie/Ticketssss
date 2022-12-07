@@ -44,7 +44,7 @@
 h1 {
     text-align: center;
     color: white;
-  padding-top: 40px;
+    padding-top: 40px;
     margin: auto;
     margin-bottom: 40px;
     font-size: 32pt;
@@ -64,23 +64,30 @@ h1 {
 	margin-bottom:25px;
 }
 .input-container label{
+	font-family: Arial, Helvetica, sans-serif;
 	position:absolute;
 	top:0px;
 	left:0px;
+  padding-top: 15px;
+  padding-left: 10px;
   margin-left: 251px;
 	font-size:16px;
-	color:#fff;	
-  transition: all 0.5s ease-in-out;
+	color:rgb(2, 2, 2);	
+  transition: all 0.2s ease-in-out;
 }
 .input-container input{ 
+  padding-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 50px;
   border:0;
   border-bottom:2px solid black;  
-  background:transparent;
-  margin-left: 246px;
-  width:50%;
-  padding:8px 0 5px 0;
-  font-size:16px;
-  color:#fff;
+  background:white;
+  margin-left: 251px;
+  width:40%;
+  padding:15px 0 5px 10px;
+  font-size:14px;
+  color:rgb(15, 15, 15);
+  border-radius: 15px 0px 15px 15px;
 }
 .input-container input:focus{ 
  border:none;	
@@ -117,4 +124,9 @@ h1 {
 }
 .createaccount:hover {
   color: whitesmoke;
+}
+
+form{
+  margin-left: 200;
+
 }
