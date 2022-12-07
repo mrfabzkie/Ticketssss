@@ -2,18 +2,18 @@
   <table class="table">
     <thead>
       <tr>
-        <th>TICKET ID</th>
-        <th>TRACKER</th>
-        <th>STATUS</th>
-        <th>ACTIONS</th>
+        <th width="10%">TICKET ID</th>
+        <th width="25%">TRACKER</th>
+        <th width="25%">STATUS</th>
+        <th width="10%">ACTIONS</th>
       </tr>
     </thead>
     <tbody *ngFor="let ticket of tickets$ ; index as i">
       <tr [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
-        <td>{{ ticket["ticketID"] }}</td>
-        <td>{{ ticket["tracker"] }}</td>
-        <td>{{ ticket["status"] }}</td>
-        <td>
+        <td width="10%">{{ ticket["ticketID"] }}</td>
+        <td width="25%">{{ ticket["tracker"] }}</td>
+        <td width="25%">{{ ticket["status"] }}</td>
+        <td width="10%">
           <button class="custom-text-button" (click)="onClickView(i)">
             View Info
           </button>
