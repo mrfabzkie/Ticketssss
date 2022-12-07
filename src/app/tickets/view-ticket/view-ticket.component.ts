@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Ticket } from 'src/app/models/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
 
 @Component({
@@ -12,27 +11,19 @@ import { TicketService } from 'src/app/services/ticket.service';
 export class ViewTicketComponent {
   constructor(private ticketService: TicketService, private fb: FormBuilder) {}
 
-  @Input() viewedTicket: Ticket = {
-    ticketID: 0,
-    status: 'NEW',
-    subject: 'SUBJ',
-    description: '',
-    tracker: '',
-    assignee: 0,
-    requester: 0,
-  };
+  @Input() viewedTicket: any;
+  @Output() viewStatus = new EventEmitter<boolean>();
 
-  tickets$: any[] = [];
+  ngOnChanges(): void{
+    console.log(this.viewedTicket);
+  }
 
   form = this.fb.group({
     ticketID: [''],
   });
 
   onClose() {
-    console.log('i got pressed');
-    document.getElementById('view-ticket-modal')!.style.display = 'none';
-    document.getElementById('view-ticket-modal-background')!.style.display =
-      'none';
+    this.viewStatus.emit(false);
   }
 
   get f() {

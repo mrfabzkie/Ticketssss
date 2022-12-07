@@ -3,9 +3,9 @@
     <h1>View Ticket</h1>
     <div>
       <span>
-        <label for="input-ticketID">TICKED ID:</label>
-        <input type="text" id="input-ticketID" name="input-ticketID" />
-        <button type="submit" class="custom-red-round-button">SEARCH</button>
+        <label for="input-ticketID"
+          >TICKED ID: {{ viewedTicket.ticketID }}</label
+        >
       </span>
     </div>
     <div>
@@ -15,11 +15,11 @@
     <table>
       <tr>
         <th style="width: 20px; height: 40px">Tracker</th>
-        <td></td>
+        <td>{{ viewedTicket.tracker }}</td>
       </tr>
       <tr>
         <th>Assignee</th>
-        <td> {{ viewedTicket.assignee }} </td>
+        <td>{{ viewedTicket.assignee }}</td>
       </tr>
       <tr>
         <th>Subject</th>
@@ -27,10 +27,18 @@
       </tr>
       <tr>
         <th>Description</th>
-        <td> {{ viewedTicket.description }} </td>
+        <td>{{ viewedTicket.description }}</td>
       </tr>
     </table>
-    <button type="close" class="custom-red-round-button" id="closeModal" data-dismiss="modal" (click)="onClose()">CLOSE</button>
+    <button
+      type="close"
+      class="custom-red-round-button"
+      id="closeModal"
+      data-dismiss="modal"
+      (click)="onClose()"
+    >
+      CLOSE
+    </button>
   </div>
 </div>
 <div class="modal-background" id="view-ticket-modal-background"></div>
