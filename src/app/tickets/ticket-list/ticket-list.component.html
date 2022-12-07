@@ -20,8 +20,8 @@
           <button class="custom-delete-button" (click)="onClickDelete(i)">
             <span class="material-symbols-outlined"> delete </span>
           </button>
-          <button class="custom-edit-button">
-            <span class="material-symbols-outlined"> edit </span>
+          <button class="custom-edit-button" (click)="onClickUpdate(i)">
+            <span class="material-symbols-outlined" > edit </span>
           </button>
         </td>
       </tr>
@@ -41,4 +41,11 @@
     [deletedTicket]="selectedTicket"
     (deleteStatus)="deleteStatus($event)"
   ></app-delete-ticket>
+</div>
+
+<div *ngIf="isUpdating">
+  <app-update-ticket
+    [updatedTicket]="selectedTicket"
+    (updatedStatus)="updateStatus($event)"
+  ></app-update-ticket>
 </div>

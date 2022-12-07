@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import { TicketService } from 'src/app/services/ticket.service';
 
 @Component({
   selector: 'app-update-ticket',
@@ -7,6 +14,14 @@ import { Component } from '@angular/core';
 })
 export class UpdateTicketComponent {
   
+  @Input() updatedTicket: any;
+
+  @Output() updatedStatus = new EventEmitter<boolean>();
+
+  onClose(){
+    this.updatedStatus.emit(false);
+  }
+
   status:boolean = true;
   assignee:boolean = false;
   ticket:boolean = false;

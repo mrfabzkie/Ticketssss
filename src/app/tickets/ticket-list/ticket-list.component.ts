@@ -31,6 +31,7 @@ export class TicketListComponent implements OnChanges, OnInit {
 
   isViewing: boolean = false;
   isDeleting: boolean = false;
+  isUpdating: boolean = false;
   tickets$: any[] = [];
   selectedTicket: any;
   trackers$: any[] = [];
@@ -79,6 +80,15 @@ export class TicketListComponent implements OnChanges, OnInit {
 
   deleteStatus(value: any) {
     this.isDeleting = value;
+  }
+
+  onClickUpdate(i: number) {
+    this.selectedTicket = this.tickets$[i];
+    this.isUpdating = true;
+  }
+
+  updateStatus(value: any) {
+    this.isUpdating = value;
   }
 
   convertToTrackerDescription() {
