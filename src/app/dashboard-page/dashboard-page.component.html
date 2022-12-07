@@ -80,7 +80,7 @@
 </div>
 
 <div *ngIf="isCreating">
-  <app-create-ticket (createStatus)="createStatus($event)"></app-create-ticket>
+  <app-create-ticket (createStatus)="createStatus($event)" [trackers]="trackers$" [users]="users$"></app-create-ticket>
 </div>
 
 <div *ngIf="isReminding">

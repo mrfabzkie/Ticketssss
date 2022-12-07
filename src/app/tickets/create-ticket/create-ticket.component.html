@@ -3,39 +3,23 @@
         <h1>Create Ticket</h1>
 
         
-        <form>
-                <select class="dropdown">
+        <form [formGroup]="form">
+                <select class="dropdown" (change)="changeTracker($event)">
                     <option hidden selected>Tracker</option>
-                    <option value="BEN">Benefits</option>
-                    <option value="PAY">Payroll</option>
-                    <option value="REC">Recruitment</option>
-                    <option value="TRA">Training</option>
-                    <option value="PES">PES</option>
-                    <option value="EMP">Employee Relation</option>
-                    <option value="MEM">MEMO</option>
-                    <option value="COE">COE</option>
-                    <option value="ENG">Engagement(RNR)</option>
-                    <option value="POL">Policy</option>
-                    <option value="HBP">HR Business Partner</option>
-                    <option value="OTH">Others</option>
-                    
+                    <option value="{{trackers[i]['tracker']}}" *ngFor="let tracker of trackers; index as i">{{tracker.description}}</option>
                 </select>
             
         
-                <select class="dropdown">
+                <select class="dropdown" (change)="changeAssignee($event)">
                     <option hidden selected>Assignee</option>
-                    <option value="2">Saturnina Alvarez</option>
-                    <option value="3">Rejine Alquisa</option>
-                    <option value="4">Pelissa Jane Ligalig</option>
-                    <option value="5">Ma. Giselle Mabunga</option>
-                    <option value="6">Jasmine Patalinghug</option>
+                    <option value="{{users[i]['userID']}}" *ngFor="let user of users; index as i">{{user.name}}</option>
                 </select>
             
             
             <br/>
-            <input type="text" placeholder="Subject" class="subj"/>
+            <input type="text" placeholder="Subject" class="subj" formControlName="subject"/>
             <br>
-            <textarea rows="10" cols="80" id="description" placeholder="Description"></textarea>
+            <textarea rows="10" cols="80" id="description" placeholder="Description" formControlName="description"></textarea>
             
         </form>
         

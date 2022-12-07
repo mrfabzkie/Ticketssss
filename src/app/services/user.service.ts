@@ -31,4 +31,8 @@ export class UserService {
       params: params,
     });
   }
+
+  public getAllUsers(): Observable<any>{
+    return this.http.get<any>(this.baseURL + '/all');
+  }
 }
