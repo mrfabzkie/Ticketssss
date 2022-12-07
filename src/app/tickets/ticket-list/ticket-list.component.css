@@ -22,7 +22,7 @@ tbody>tr>td{
 th{
   font-family: chathura;
   font-weight: bold;
-  font-size: 40;
+  font-size: 50;
   color: white;
 }
 
@@ -44,10 +44,10 @@ tbody{
 
 .ticket-body {
   font-family: chathura;
-  background-image: linear-gradient(transparent 12%, white 12%, white 66.66%, white 66.66%);
+  background-image: linear-gradient(transparent 15.5%, white 15.5%, white 66.66%, white 66.66%);
   padding-left: 0px;
   margin-left: 1%;
-  height: 140%;
+  height: 550px;
   width: 90%;
 }
 
