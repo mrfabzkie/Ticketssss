@@ -17,11 +17,11 @@
           <button class="custom-text-button" (click)="onClickView(i)">
             View Info
           </button>
-          <button class="custom-delete-button">
+          <button class="custom-delete-button" (click)="onClickDelete(i)">
             <span class="material-symbols-outlined"> delete </span>
           </button>
-          <button class="custom-edit-button">
-            <span class="material-symbols-outlined"> edit </span>
+          <button class="custom-edit-button" (click)="onClickUpdate(i)">
+            <span class="material-symbols-outlined" > edit </span>
           </button>
         </td>
       </tr>
@@ -34,4 +34,18 @@
     [viewedTicket]="selectedTicket"
     (viewStatus)="viewStatus($event)"
   ></app-view-ticket>
+</div>
+
+<div *ngIf="isDeleting">
+  <app-delete-ticket
+    [deletedTicket]="selectedTicket"
+    (deleteStatus)="deleteStatus($event)"
+  ></app-delete-ticket>
+</div>
+
+<div *ngIf="isUpdating">
+  <app-update-ticket
+    [updatedTicket]="selectedTicket"
+    (updatedStatus)="updateStatus($event)"
+  ></app-update-ticket>
 </div>

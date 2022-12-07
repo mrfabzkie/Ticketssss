@@ -16,6 +16,7 @@ import { AddremTicketComponent } from './tickets/addrem-ticket/addrem-ticket.com
 import { HomePageComponent } from './home-page/home-page.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delete-ticket.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddremTicketComponent,
     HomePageComponent,
     CreateAccountComponent,
+    DeleteTicketComponent,
   ],
   imports: [
     BrowserModule,
