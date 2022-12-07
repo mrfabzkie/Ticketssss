@@ -13,8 +13,8 @@
 
 <div class="body-div">
   <div class="buttons-div">
-    <button class="dashbtn">CREATE</button>
-    <button class="dashbtn" style="font-size: 30 pt">ADD REMINDER</button>
+    <button class="dashbtn" (click)="onCreateTicket()">CREATE</button>
+    <button class="dashbtn" style="font-size: 30 pt" (click)="onRemindTicket()">ADD REMINDER</button>
     <button class="dashbtn">EXPORT</button>
 
     <!-- <button class="dashbtn">TICKET WORKFLOW</button> -->
@@ -45,4 +45,29 @@
     </div>
     <app-ticket-list></app-ticket-list>
   </div>
+
+</div>
+
+<div *ngIf="isCreating"> 
+  <app-create-ticket
+  
+  ></app-create-ticket>
+</div>
+
+<div *ngIf="isReminding"> 
+  <app-addrem-ticket
+  
+  ></app-addrem-ticket>
+</div>
+
+<div *ngIf="isCreating">
+  <app-create-ticket
+    (createStatus)="createStatus($event)"
+  ></app-create-ticket>
+</div>
+
+<div *ngIf="isReminding">
+  <app-addrem-ticket
+    (remindStatus)="remindStatus($event)"
+  ></app-addrem-ticket>
 </div>

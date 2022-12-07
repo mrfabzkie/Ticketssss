@@ -19,6 +19,8 @@ export class DashboardPageComponent {
     private dialog: MatDialog, 
     private router: Router,) {}
 
+    isCreating: boolean = false;
+    isReminding: boolean = false;
 
 
   openDialog(toggle : string){
@@ -33,5 +35,21 @@ export class DashboardPageComponent {
     } else if (toggle == "addrem") {
       this.dialog.open(AddremTicketComponent, {});
     }
+  }
+
+  onCreateTicket(){
+    this.isCreating = true;
+  }
+
+  onRemindTicket(){
+    this.isReminding = true;
+  }
+
+  createStatus(value: any){
+    this.isCreating = value;
+  }
+
+  remindStatus(value: any){
+    this.isReminding = value;
   }
 }

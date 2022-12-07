@@ -7,23 +7,23 @@ import { Component } from '@angular/core';
 })
 export class UpdateTicketComponent {
   
-  // status:boolean = true;
-  // assignee:boolean = false;
-  // ticket:boolean = false;
+  status:boolean = true;
+  assignee:boolean = false;
+  ticket:boolean = false;
 
-  // onClick(toggle : string) {
-  //   if (toggle == "status") {
-  //     this.status = !this.status;
-  //     this.assignee = false;
-  //     this.ticket = false;
-  //   } else if (toggle == "assignee") {
-  //     this.assignee = !this.assignee;
-  //     this.status = false;
-  //     this.ticket = false;
-  //   } else {
-  //     this.ticket = !this.ticket;
-  //     this.status = false;
-  //     this.assignee = false;
-  //   }
-  // }
+  onClick(toggle : string) {
+    if (toggle == "status") {
+      this.status = !this.status;
+      this.assignee = false;
+      this.ticket = false;
+    } else if (toggle == "assignee") {
+      this.assignee = !this.assignee;
+      this.status = false;
+      this.ticket = false;
+    } else {
+      this.ticket = !this.ticket;
+      this.status = false;
+      this.assignee = false;
+    }
+  }
 }
