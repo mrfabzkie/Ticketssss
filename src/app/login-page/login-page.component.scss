@@ -16,7 +16,7 @@
     margin-top: 80px;
     height:80%;
     width:70%;
-    border-radius: 20px;
+    border-radius: 30px;
     
 }
 
@@ -47,15 +47,22 @@
 }
 
 h1 {
-  padding-top: 40px;
-}
-
-h1, h2 {
-    margin: auto;
-    margin-bottom: 40px;
+    padding-top: 120px;
+     margin-bottom: 40px;
     font-size: 32pt;
     font-weight: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 40px;
 }
+
+ h2 {
+    margin: auto;
+    margin-bottom: 40px;
+    font-size: 20pt;
+    font-weight: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 40px;
+  }
 
 .text-center{
 	color:#fff;	
@@ -70,25 +77,33 @@ h1, h2 {
 .input-container{
 	position:relative;
 	margin-bottom:25px;
+  
 }
 .input-container label{
+  font-family: Arial, Helvetica, sans-serif;
 	position:absolute;
 	top:0px;
 	left:0px;
+  padding-top: 15px;
+  padding-left: 10px;
   margin-left: 251px;
 	font-size:16px;
-	color:#fff;	
-  transition: all 0.5s ease-in-out;
+	color:rgb(2, 2, 2);	
+  transition: all 0.2s ease-in-out;
 }
 .input-container input{ 
+  padding-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 50px;
   border:0;
   border-bottom:2px solid black;  
-  background:transparent;
-  margin-left: 246px;
-  width:50%;
-  padding:8px 0 5px 0;
-  font-size:16px;
-  color:#fff;
+  background:white;
+  margin-left: 251px;
+  width:40%;
+  padding:15px 0 5px 10px;
+  font-size:14px;
+  color:rgb(15, 15, 15);
+  border-radius: 15px 0px 15px 15px;
 }
 .input-container input:focus{ 
  border:none;	
@@ -104,25 +119,46 @@ h1, h2 {
 }
 
 .buttoncreate{
+  font-family: Chathura;
   color:white;
   // border: none;
-  margin-top:15px;
+  margin: top 10px;
+  padding-top: 0px;
   text-align: center;
   background-color: #F12F2F;
   width: 249px;
   height: 50px;
-  left: 1145px;
-  top: 803px;
-  margin-left: 39%;
+  margin-left: 41%; 
   border-radius: 10px;
+  padding-bottom: 62px;
+  font-size: 30pt;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: .5s;
+}
+.buttoncreate:hover{
+  background-color: rgb(31, 30, 30);
 }
 
 .createaccount{
-  margin-top: 20px;
-  margin-left: 5in;
+  transition: .5s;
+  font-family: Chathura;
+  margin-top: 10px;
+  margin-left: 6.1in;
   background: none;
   border: none;
+  color: #fff;
+  font-size: 25pt;
+  font-weight: bolder;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .createaccount:hover {
-  color: whitesmoke;
+  color: rgb(155, 155, 155);
+}
+
+form{
+  margin-left: 200;
+
+
 }
