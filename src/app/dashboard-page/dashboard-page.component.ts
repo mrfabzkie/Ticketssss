@@ -5,10 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 import { TrackerService } from '../services/tracker.service';
 import { TicketStatusService } from '../services/ticketstatus.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-dashboard-page',
-  providers: [TrackerService, TicketStatusService],
+  providers: [TrackerService, TicketStatusService, UserService],
   templateUrl: './dashboard-page.component.html',
   styleUrls: ['./dashboard-page.component.css'],
 })
@@ -19,6 +20,7 @@ export class DashboardPageComponent {
     private fb: FormBuilder,
     private trackerService: TrackerService,
     private ticketStatusService: TicketStatusService,
+    private userService: UserService,
   ) {}
 
   ngOnInit(){
@@ -34,12 +36,18 @@ export class DashboardPageComponent {
     this.ticketStatusService.getAllTicketStatus().subscribe(result =>{
       this.ticketStatus$ = result['data'];
     });
+
+    this.userService.getAllUsers().subscribe(result => {
+      this.users$ = result['data'];
+    })
   }
 
   isCreating: boolean = false;
   isReminding: boolean = false;
+  isAdding: boolean = false;
   trackers$: any[] = [];
   ticketStatus$: any[] = [];
+  users$: any[] = [];
 
   filters: any = {
     searchedValue: '',
