@@ -1,0 +1,77 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* semi transparent black */
+    background-color: #000;
+    opacity: 0.75;
+
+    z-index: 900;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    overflow: x;
+}
+
+.modal-body {
+    position: absolute;
+    width: 1082px;
+    height: 555px;
+    left: 207px;
+    top: 70px;
+
+    background: #2F2F2F;
+    border-radius: 71px;
+    
+    /* font-family: 'Chathura'; */
+    font-style: normal;
+    font-weight: 70;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0.005em;
+
+    color: #FFFFFF;
+
+}
+
+.updatebtn {
+    /* font-family: 'Chathura'; */
+  font-size: 20pt;
+  width: 194px;
+  border-radius: 50px;
+  font-weight: bolder;
+}
+
+img {
+    margin-top: 20px;
+    height: 3in;
+}
+
+.btncancel {
+    font-size: 20pt;
+    width: 240px;
+    height: 45px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.btn {
+    font-size: 20pt;
+    width: 240px;
+    height: 45px;
+    margin-left: 200px;
+    border-radius: 10px;
+    background-color: green;
+}

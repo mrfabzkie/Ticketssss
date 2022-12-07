@@ -5,6 +5,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delete-ticket.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'menu',
     component: DashboardPageComponent,
+    
+  },
+  {
+    path: 'delete',
+    component: DeleteTicketComponent,
     
   },
 ];
