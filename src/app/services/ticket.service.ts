@@ -31,4 +31,17 @@ export class TicketService {
       params: params,
     });
   }
+
+  public getSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
+
+    const params = new HttpParams()
+      .set('description',searchedValue)
+      .set('tracker', tracker)
+      .set('status', status);
+
+    return this.http.get<any>(this.baseURL + '/ticket/search',{
+      observe: 'response',
+      params: params
+    });
+  }
 }

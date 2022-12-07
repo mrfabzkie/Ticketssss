@@ -136,7 +136,7 @@
   font-family: 'Chathura' ;
   font-style: normal;
   font-weight: bold;
-  height: 10%;
+  height: 7%;
   font-size: 25px;
   border-radius: 10px;
   border: none;
@@ -149,14 +149,14 @@
 }
 
 .custom-search-bar{
-  width: 50%;
+  width: 58%;
   border: none;
   background-color: #EBE9E9;
   padding-left: 1%;
 }
 
 .custom-dropdown{
-  width: 14%;
+  width: 15%;
   text-align: center;
   background-color: #F12F2F;
   color: white;

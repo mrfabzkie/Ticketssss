@@ -14,60 +14,75 @@
 <div class="body-div">
   <div class="buttons-div">
     <button class="dashbtn" (click)="onCreateTicket()">CREATE</button>
-    <button class="dashbtn" style="font-size: 30 pt" (click)="onRemindTicket()">ADD REMINDER</button>
+    <button class="dashbtn" style="font-size: 30 pt" (click)="onRemindTicket()">
+      ADD REMINDER
+    </button>
     <button class="dashbtn">EXPORT</button>
 
     <!-- <button class="dashbtn">TICKET WORKFLOW</button> -->
   </div>
 
   <div class="ticket-list-div">
-    <div class="bars-and-filters-div">
-      <input
-        type="text"
-        class="custom-search-bar bars-and-filters-elements"
-        placeholder="Search..."
-      />
-      <button class="custom-button bars-and-filters-elements">SEARCH</button>
-      <select
-        name="tracker"
-        id="tracker-select"
-        class="custom-dropdown bars-and-filters-elements"
-      >
-        <option value="BEN">Benefits</option>
-      </select>
-      <select
-        name="assignee"
-        id="assignee-select"
-        class="custom-dropdown bars-and-filters-elements"
-      >
-        <option value="1">Fabby Nee-chan</option>
-      </select>
-    </div>
-    <app-ticket-list></app-ticket-list>
+    <form [formGroup]="form">
+      <div class="bars-and-filters-div">
+        <input
+          type="text"
+          class="custom-search-bar bars-and-filters-elements"
+          placeholder="Search..."
+          formControlName="searchedValue"
+        />
+        <select
+          name="tracker"
+          id="tracker-select"
+          class="custom-dropdown bars-and-filters-elements"
+          formControlName="tracker"
+          (change)="changeTracker($event)"
+        >
+          <option value="">Trackers</option>
+          <option
+            value="{{ trackers$[i].tracker }}"
+            *ngFor="let tracker of trackers$; index as i"
+          >
+            {{ trackers$[i].description }}
+          </option>
+        </select>
+        <select
+          name="assignee"
+          id="assignee-select"
+          class="custom-dropdown bars-and-filters-elements"
+          formControlName="status"
+          (change)="changeStatus($event)"
+        >
+          <option value="">Status</option>
+          <option
+            value="{{ ticketStatus.status }}"
+            *ngFor="let ticketStatus of ticketStatus$; index as i"
+          >
+            {{ ticketStatus$[i].description }}
+          </option>
+        </select>
+      </div>
+    </form>
+    <app-ticket-list
+      [trackerFilter]="tracker"
+      [statusFilter]="status"
+      [searchedValueFilter]="searchedValue"
+    ></app-ticket-list>
   </div>
-
-</div>
-
-<div *ngIf="isCreating"> 
-  <app-create-ticket
-  
-  ></app-create-ticket>
-</div>
-
-<div *ngIf="isReminding"> 
-  <app-addrem-ticket
-  
-  ></app-addrem-ticket>
 </div>
 
 <div *ngIf="isCreating">
-  <app-create-ticket
-    (createStatus)="createStatus($event)"
-  ></app-create-ticket>
+  <app-create-ticket></app-create-ticket>
 </div>
 
 <div *ngIf="isReminding">
-  <app-addrem-ticket
-    (remindStatus)="remindStatus($event)"
-  ></app-addrem-ticket>
+  <app-addrem-ticket></app-addrem-ticket>
+</div>
+
+<div *ngIf="isCreating">
+  <app-create-ticket (createStatus)="createStatus($event)"></app-create-ticket>
+</div>
+
+<div *ngIf="isReminding">
+  <app-addrem-ticket (remindStatus)="remindStatus($event)"></app-addrem-ticket>
 </div>

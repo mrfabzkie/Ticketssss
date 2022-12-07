@@ -1,55 +1,89 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TicketListComponent } from '../tickets/ticket-list/ticket-list.component';
 import { MatDialog } from '@angular/material/dialog';
-import { UpdateTicketComponent } from '../tickets/update-ticket/update-ticket.component';
-import { CreateTicketComponent } from '../tickets/create-ticket/create-ticket.component';
-import { ViewTicketComponent } from '../tickets/view-ticket/view-ticket.component';
-import { AddremTicketComponent } from '../tickets/addrem-ticket/addrem-ticket.component';
+import { FormBuilder } from '@angular/forms';
+import { TrackerService } from '../services/tracker.service';
+import { TicketStatusService } from '../services/ticketstatus.service';
 
 @Component({
   selector: 'app-dashboard-page',
+  providers: [TrackerService, TicketStatusService],
   templateUrl: './dashboard-page.component.html',
-  styleUrls: ['./dashboard-page.component.css']
+  styleUrls: ['./dashboard-page.component.css'],
 })
 export class DashboardPageComponent {
-
-
   constructor(
-    private dialog: MatDialog, 
-    private router: Router,) {}
+    private dialog: MatDialog,
+    private router: Router,
+    private fb: FormBuilder,
+    private trackerService: TrackerService,
+    private ticketStatusService: TicketStatusService,
+  ) {}
 
-    isCreating: boolean = false;
-    isReminding: boolean = false;
+  ngOnInit(){
+    this.form.get('searchedValue')!.valueChanges.subscribe(result => {
+      this.filters['searchedValue'] = result;
+      this.searchedValue = result!;
+    });
 
+    this.trackerService.getAllTrackers().subscribe(result => {
+      this.trackers$ = result['data'];
+    });
 
-  openDialog(toggle : string){
-    if (toggle == "update") {
-      this.dialog.open(UpdateTicketComponent,{});
-    } else if (toggle == "create") {
-      this.dialog.open(CreateTicketComponent,{});
-    } else if (toggle == "list") {
-      this.dialog.open(TicketListComponent, {});
-    } else if (toggle == "view") {
-      this.dialog.open(ViewTicketComponent, {});
-    } else if (toggle == "addrem") {
-      this.dialog.open(AddremTicketComponent, {});
-    }
+    this.ticketStatusService.getAllTicketStatus().subscribe(result =>{
+      this.ticketStatus$ = result['data'];
+    });
   }
 
-  onCreateTicket(){
+  isCreating: boolean = false;
+  isReminding: boolean = false;
+  trackers$: any[] = [];
+  ticketStatus$: any[] = [];
+
+  filters: any = {
+    searchedValue: '',
+    tracker: '',
+    status: '',
+  }
+
+  searchedValue: String = '';
+  tracker: String = '';
+  status: String = '';
+
+  form = this.fb.group({
+    searchedValue: [''],
+    tracker: [''],
+    status: ['']
+  });
+
+  onCreateTicket() {
     this.isCreating = true;
   }
 
-  onRemindTicket(){
+  onRemindTicket() {
     this.isReminding = true;
   }
 
-  createStatus(value: any){
+  createStatus(value: any) {
     this.isCreating = value;
   }
 
-  remindStatus(value: any){
+  remindStatus(value: any) {
     this.isReminding = value;
+  }
+
+  get f() {
+    return this.form.controls;
+  }
+
+  changeTracker(value: any){
+    this.tracker = value.target.value;
+    this.filters['tracker'] = value.target.value;
+  }
+
+  changeStatus(value: any){
+    this.status = value.target.value;
+    this.filters['status'] = value.target.value;
   }
 }
