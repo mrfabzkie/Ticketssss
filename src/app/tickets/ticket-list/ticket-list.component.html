@@ -8,7 +8,7 @@
         <th>ACTIONS</th>
       </tr>
     </thead>
-    <tbody *ngFor="let ticket of tickets$; index as i">
+    <tbody *ngFor="let ticket of tickets$ ; index as i">
       <tr [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
         <td>{{ ticket["ticketID"] }}</td>
         <td>{{ ticket["tracker"] }}</td>

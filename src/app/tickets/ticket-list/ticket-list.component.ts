@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TicketService } from 'src/app/services/ticket.service';
 
@@ -8,21 +8,39 @@ import { TicketService } from 'src/app/services/ticket.service';
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.css']
 })
-export class TicketListComponent {
-
-  isViewing: boolean = false;
+export class TicketListComponent implements OnChanges, OnInit{
 
   constructor(private ticketService: TicketService, private dialog: MatDialog, ){}
 
-  tickets$: any[] = [];
+  @Input() searchedValueFilter: any;
+  @Input() trackerFilter: any;
+  @Input() statusFilter: any;
 
+  isViewing: boolean = false;
+  tickets$: any[] = [];
   selectedTicket:any;
 
-  testData: String = 'SAMPLE';
 
   ngOnInit(): void {
-    this.ticketService.getAllTickets().subscribe((result) => {
-      this.tickets$ = result['data'];
+    this.ticketService.getSearchedTicket(
+      this.searchedValueFilter,
+      this.trackerFilter,
+      this.statusFilter,
+    ).subscribe((result) => {
+      this.tickets$ = [];
+      this.tickets$ = result['body']['data'];
+    })
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.ticketService.getSearchedTicket(
+      this.searchedValueFilter,
+      this.trackerFilter,
+      this.statusFilter,
+    ).subscribe((result) => {
+      console.log(result);
+      this.tickets$.splice(0);
+      this.tickets$ = result['body']['data'];
     })
   }
 
@@ -34,5 +52,6 @@ export class TicketListComponent {
   viewStatus(value: any){
     this.isViewing = value;
   }
+
 
 }
