@@ -35,7 +35,7 @@ export class TicketService {
   public getSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
 
     const params = new HttpParams()
-      .set('ticketID',searchedValue)
+      .set('description',searchedValue)
       .set('tracker', tracker)
       .set('status', status);
 
