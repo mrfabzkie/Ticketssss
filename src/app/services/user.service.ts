@@ -22,4 +22,13 @@ export class UserService {
       params: params,
     });
   }
+
+  public getSpecificUser(userID: number): Observable<any> {
+    const params = new HttpParams().set('userID', userID);
+
+    return this.http.get<any>(this.baseURL + '/info', {
+      observe: 'response',
+      params: params,
+    });
+  }
 }
