@@ -29,6 +29,7 @@ export class TicketListComponent implements OnChanges, OnInit {
   @Input() trackerFilter: any;
   @Input() statusFilter: any;
   @Input() showTicketListType: any;
+  @Input() users: any;
 
   isViewing: boolean = false;
   isDeleting: boolean = false;
@@ -113,11 +114,15 @@ export class TicketListComponent implements OnChanges, OnInit {
 
   onClickUpdate(i: number) {
     this.selectedTicket = this.tickets$[i];
+    this.convertBackToTracker();
+    this.convertBackToStatus();
     this.isUpdating = true;
   }
 
   updateStatus(value: any) {
     this.isUpdating = value;
+    this.convertBackToTrackerDescription();
+    this.convertBackToStatusDescription();
   }
 
   convertToTrackerDescription() {
@@ -143,4 +148,38 @@ export class TicketListComponent implements OnChanges, OnInit {
       });
     }
   }
+
+    //Benefits to BEN
+  convertBackToTracker(){
+    var result = this.trackers$.find((obj: any) => {
+      return obj['description'] === this.selectedTicket['tracker']
+    });
+    this.selectedTicket['tracker'] = result['tracker'];
+  }
+    //BEN to Benefits
+  convertBackToTrackerDescription(){
+    var result = this.trackers$.find((obj: any) => {
+      return obj['tracker'] === this.selectedTicket['tracker'];
+    })
+
+    this.selectedTicket['tracker'] = result['description'];
+  }
+
+    //In Progress to INP
+  convertBackToStatus(){
+    var result = this.status$.find((obj: any) => {
+      return obj['description'] === this.selectedTicket['status'];
+    });
+    this.selectedTicket['status'] = result['status'];
+  }
+
+    //INP to In Progress
+  convertBackToStatusDescription(){
+    var result = this.status$.find((obj) => {
+      return obj['status'] === this.selectedTicket['status'];
+    });
+    this.selectedTicket['status'] = result['description'];
+  }
+
+
 }

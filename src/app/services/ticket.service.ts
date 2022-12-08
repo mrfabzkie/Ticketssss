@@ -8,12 +8,12 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 @Injectable()
 export class TicketService {
-  baseURL = 'http://localhost:8080';
+  baseURL = 'http://localhost:8080/ticket';
 
   constructor(private http: HttpClient) {}
 
   public createTicket(formData: any): Observable<any> {
-    return this.http.post<any>(this.baseURL + '/ticket/create', formData);
+    return this.http.post<any>(this.baseURL + 'create', formData);
   }
 
   public getAllSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
@@ -23,7 +23,7 @@ export class TicketService {
       .set('tracker', tracker)
       .set('status', status);
 
-    return this.http.get<any>(this.baseURL + '/ticket/all',{
+    return this.http.get<any>(this.baseURL + '/all',{
       observe: 'response',
       params: params
     });
@@ -35,7 +35,7 @@ export class TicketService {
     .set('tracker', tracker)
     .set('status', status);
 
-    return this.http.get<any>(this.baseURL + '/ticket/active', {
+    return this.http.get<any>(this.baseURL + '/active', {
       observe: 'response',
       params: params,
     });
@@ -47,9 +47,13 @@ export class TicketService {
     .set('tracker', tracker)
     .set('status', status);
 
-    return this.http.get<any>(this.baseURL + '/ticket/aging', {
+    return this.http.get<any>(this.baseURL + '/aging', {
       observe: 'response',
       params: params,
     });
+  }
+
+  public updateTicket(formData: FormData): Observable<any>{
+    return this.http.post<any>(this.baseURL + '/update', formData);
   }
 }
