@@ -17,6 +17,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delete-ticket.component';
+import { UsersPageComponent } from './users-page/users-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delet
     HomePageComponent,
     CreateAccountComponent,
     DeleteTicketComponent,
+    UsersPageComponent,
   ],
   imports: [
     BrowserModule,
