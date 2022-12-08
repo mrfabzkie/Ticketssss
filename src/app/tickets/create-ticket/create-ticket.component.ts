@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Ticket } from 'src/app/models/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
 
@@ -24,8 +24,8 @@ export class CreateTicketComponent {
   ){}
 
   form = this.fb.group({
-    subject: [''],
-    description: [''],
+    subject: ['', [Validators.required]],
+    description: ['', [Validators.required]],
   });
 
   selectedTracker: string = '';
