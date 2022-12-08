@@ -50,4 +50,9 @@ export class UserService {
   public deleteUsers(formData: any): Observable<any>{
     return this.http.post<any>(this.baseURL + '/delete', formData);
   }
+
+  public registerUser(formData: any): Observable<any>{
+    console.log('register?');
+    return this.http.post<any>(this.baseURL + '/register', formData);
+  }
 }
