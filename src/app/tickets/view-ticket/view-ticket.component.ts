@@ -9,6 +9,11 @@ import { FormBuilder } from '@angular/forms';
 import { TicketService } from 'src/app/services/ticket.service';
 import { UserService } from 'src/app/services/user.service';
 
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
 @Component({
   selector: 'app-view-ticket',
   providers: [TicketService, UserService],
@@ -26,6 +31,7 @@ export class ViewTicketComponent {
   @Output() viewStatus = new EventEmitter<boolean>();
   requester: String = '';
   assignee: String = '';
+  displayDate: String = '';
 
   ngOnChanges(): void {
     this.userService.getSpecificUser(this.viewedTicket.requester).subscribe((result) => {
@@ -37,6 +43,8 @@ export class ViewTicketComponent {
       let data: any = result['body']['data'];
       this.assignee = data['name'];
     })
+
+    this.convertToReadableDate();
   }
 
   form = this.fb.group({
@@ -49,5 +57,11 @@ export class ViewTicketComponent {
 
   get f() {
     return this.form.controls;
+  }
+
+  convertToReadableDate(){
+    const [year, month, day] = this.viewedTicket.createdAt.split('-');
+    let dateParse = new Date(year, month-1, day);
+    this.displayDate = monthNames[dateParse.getMonth()] + ' ' + dateParse.getDate() + ', ' + dateParse.getFullYear();
   }
 }
