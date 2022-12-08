@@ -6,6 +6,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delete-ticket.component';
+import { UsersPageComponent } from './users-page/users-page.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,12 @@ const routes: Routes = [
   {
     path: 'delete',
     component: DeleteTicketComponent,
+    
+  },
+
+  {
+    path: 'users',
+    component: UsersPageComponent,
     
   },
 ];
