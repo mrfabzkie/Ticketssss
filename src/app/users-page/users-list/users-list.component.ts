@@ -20,20 +20,21 @@ import { UserService } from 'src/app/services/user.service';
 export class UsersListComponent implements OnChanges, OnInit {
 
   users$ : any []=[];
-
+  @Input() searchedValueFilter: any;
+  @Input() roleFilter: any;
   constructor(
     private userService: UserService,
   ) {}
   ngOnInit(): void {
-   
+    this.userService.getAllSearchedUsers("","").subscribe((result) => {
+      this.users$ = result['body']['data'];
+      console.log(this.users$);
+    });
   }
   
   
   ngOnChanges(changes: SimpleChanges): void {
-   this.userService.getAllSearchedUsers("","").subscribe((result) => {
-    this.users$ = result['data'];
-    console.log(this.users$);
-  });
+   
   }
 
 

@@ -22,10 +22,13 @@ export class UsersPageComponent {
     private userService: UserService,
   ) {}
 
+  roles$ : any []=[];
+
   ngOnInit(){
     this.form.get('searchedValue')!.valueChanges.subscribe(result => {
       this.filters['searchedValue'] = result;
       this.searchedValue = result!;
+      console.log(this.searchedValue);
     });
   }
 
