@@ -8,8 +8,8 @@
         <th width="10%">ACTIONS</th>
       </tr>
     </thead>
-    <tbody *ngFor="let ticket of tickets$ ; index as i">
-      <tr [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
+    <tbody >
+      <tr [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'" *ngFor="let ticket of tickets$ ; index as i">
         <td width="10%">{{ ticket["ticketID"] }}</td>
         <td width="25%">{{ ticket["tracker"] }}</td>
         <td width="25%">{{ ticket["status"] }}</td>
