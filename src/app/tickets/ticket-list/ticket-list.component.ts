@@ -77,8 +77,19 @@ export class TicketListComponent implements OnChanges, OnInit {
           this.convertToTrackerDescription();
           this.convertToStatusDescription();
         });
-    } else {
-      this.tickets$.splice(0);
+    } else if (this.showTicketListType == 2){
+      this.ticketService
+      .getAgingSearchedTicket(
+        this.searchedValueFilter,
+        this.trackerFilter,
+        this.statusFilter
+      )
+      .subscribe((result) => {
+        this.tickets$.splice(0);
+        this.tickets$ = result['body']['data'];
+        this.convertToTrackerDescription();
+        this.convertToStatusDescription();
+      });
     }
   }
 
