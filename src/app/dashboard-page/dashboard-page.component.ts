@@ -121,4 +121,48 @@ export class DashboardPageComponent {
         ? TicketListType[0]
         : TicketListType[this.showTicketListType + 1];
   }
+
+  tableToCSV() {
+    let csv_data = [];
+
+    var rows = document.getElementsByTagName('tr');
+    for(var i = 0; i < rows.length; i++){
+      var cols = rows[i].querySelectorAll('td,th');
+      var csvrow = [];
+      for(var j = 0; j < cols.length - 1 ; j++){
+        csvrow.push(cols[j].innerHTML);
+      }
+      csv_data.push(csvrow.join(","));
+    }
+
+    var csv_string = csv_data.join('\n')
+
+    this.downloadCSVFile(csv_string);
+  }
+
+  downloadCSVFile(data: any){
+    let CSVFile = new Blob([data], { type: "text/csv"});
+    var temp_link = document.createElement('a');
+
+    let fileName = TicketListType[this.showTicketListType] + ' Tickets as of ' +  this.getCurrentDate() + '.csv'
+
+    temp_link.download = fileName;
+    var url = window.URL.createObjectURL(CSVFile);
+    temp_link.href = url;
+
+    temp_link.style.display = "none";
+    document.body.appendChild(temp_link);
+
+    temp_link.click();
+    document.body.removeChild(temp_link);
+  }
+
+  getCurrentDate(): String{
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    return (mm + '/' + dd + '/' + yyyy);
+  }
 }
