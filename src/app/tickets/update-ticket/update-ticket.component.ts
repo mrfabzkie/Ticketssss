@@ -28,14 +28,20 @@ export class UpdateTicketComponent implements OnChanges {
 
   initialTracker: any;
 
-  updatedTicket: any;
+  selectedAssignee: any;
+  selectedTracker: any;
+  selectedStatus: any;
 
   form = this.fb.group({
     subject: ['', [Validators.required]],
     description: ['', [Validators.required]],
   });
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.selectedAssignee = this.selectedTicket.assignee;
+    this.selectedStatus = this.selectedTicket.status;
+    this.selectedTracker = this.selectedTicket.tracker;
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.f.subject.setValue(this.selectedTicket.subject);
