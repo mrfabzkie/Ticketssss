@@ -12,24 +12,32 @@ export class TicketService {
 
   constructor(private http: HttpClient) {}
 
-  public getAllTickets(): Observable<any> {
-    return this.http.get<any>(this.baseURL + '/ticket/all');
-  }
-
   public createTicket(formData: any): Observable<any> {
     return this.http.post<any>(this.baseURL + '/ticket/create', formData);
   }
 
-  public getSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
+  public getAllSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
 
     const params = new HttpParams()
       .set('description',searchedValue)
       .set('tracker', tracker)
       .set('status', status);
 
-    return this.http.get<any>(this.baseURL + '/ticket/search',{
+    return this.http.get<any>(this.baseURL + '/ticket/all',{
       observe: 'response',
       params: params
+    });
+  }
+
+  public getActiveSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any>{
+    const params = new HttpParams()
+    .set('description',searchedValue)
+    .set('tracker', tracker)
+    .set('status', status);
+
+    return this.http.get<any>(this.baseURL + '/ticket/active', {
+      observe: 'response',
+      params: params,
     });
   }
 }
