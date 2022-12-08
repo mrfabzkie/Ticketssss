@@ -45,7 +45,10 @@
 
 <div *ngIf="isUpdating">
   <app-update-ticket
-    [updatedTicket]="selectedTicket"
+    [selectedTicket]="selectedTicket"
     (updatedStatus)="updateStatus($event)"
+    [ticketStatus]="status$"
+    [users]="users"
+    [trackers]="trackers$"
   ></app-update-ticket>
 </div>
