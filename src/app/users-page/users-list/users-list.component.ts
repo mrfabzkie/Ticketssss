@@ -23,6 +23,10 @@ export class UsersListComponent implements OnChanges, OnInit {
 
   @Input() searchedValueFilter: any;
   @Input() roleFilter: any;
+  @Input() users: any;
+
+  isDeleting: boolean = false;
+  selectedUser: any;
 
   constructor(
     private userService: UserService,
@@ -38,6 +42,15 @@ export class UsersListComponent implements OnChanges, OnInit {
 
     });
     console.log(changes);
+  }
+
+  onClickDelete(i: number) {
+    this.selectedUser = this.users$[i];
+    this.isDeleting = true;
+  }
+
+  deleteStatus(value: any) {
+    this.isDeleting = value;
   }
 
 
