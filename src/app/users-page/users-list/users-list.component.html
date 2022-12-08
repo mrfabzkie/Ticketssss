@@ -14,7 +14,7 @@
           <td width="25%">{{ user["name"] }}</td>
           <td width="25%">{{ user["role"] }}</td>
           <td width="10%">
-            <button class="custom-text-button">
+            <button class="custom-text-button" (click)="onClickView(i)">
               View Info
             </button>
             <button class="custom-delete-button">
@@ -27,5 +27,13 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+
+  <div *ngIf="isViewUser">
+    <app-view-user
+    (viewedStatus)="viewedStatus($event)"
+    [viewedUser]="selectedUser"
+    ></app-view-user>
   </div>
   

@@ -19,6 +19,20 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersListComponent implements OnChanges, OnInit {
 
+  isViewUser: boolean = false;
+  selectedUser : any;
+
+  onClickView(i: number) {
+    this.selectedUser = this.users$[i];
+    this.isViewUser = true;
+  
+}
+
+viewedStatus(value : any){
+
+    this.viewedStatus = value;
+
+}
   users$ : any []=[];
 
   @Input() searchedValueFilter: any;
