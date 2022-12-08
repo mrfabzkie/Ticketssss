@@ -22,12 +22,13 @@ export class TicketListComponent implements OnChanges, OnInit {
     private ticketService: TicketService,
     private dialog: MatDialog,
     private trackerService: TrackerService,
-    private ticketStatusService: TicketStatusService,
+    private ticketStatusService: TicketStatusService
   ) {}
 
   @Input() searchedValueFilter: any;
   @Input() trackerFilter: any;
   @Input() statusFilter: any;
+  @Input() showTicketListType: any;
 
   isViewing: boolean = false;
   isDeleting: boolean = false;
@@ -46,12 +47,39 @@ export class TicketListComponent implements OnChanges, OnInit {
     this.ticketStatusService.getAllTicketStatus().subscribe((result) => {
       this.status$ = result['data'];
       this.convertToStatusDescription();
-    })
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.ticketService
-      .getSearchedTicket(
+    if (this.showTicketListType == 0) {
+      this.ticketService
+        .getAllSearchedTicket(
+          this.searchedValueFilter,
+          this.trackerFilter,
+          this.statusFilter
+        )
+        .subscribe((result) => {
+          this.tickets$.splice(0);
+          this.tickets$ = result['body']['data'];
+          this.convertToTrackerDescription();
+          this.convertToStatusDescription();
+        });
+    } else if (this.showTicketListType == 1) {
+      this.ticketService
+        .getActiveSearchedTicket(
+          this.searchedValueFilter,
+          this.trackerFilter,
+          this.statusFilter
+        )
+        .subscribe((result) => {
+          this.tickets$.splice(0);
+          this.tickets$ = result['body']['data'];
+          this.convertToTrackerDescription();
+          this.convertToStatusDescription();
+        });
+    } else if (this.showTicketListType == 2){
+      this.ticketService
+      .getAgingSearchedTicket(
         this.searchedValueFilter,
         this.trackerFilter,
         this.statusFilter
@@ -62,6 +90,7 @@ export class TicketListComponent implements OnChanges, OnInit {
         this.convertToTrackerDescription();
         this.convertToStatusDescription();
       });
+    }
   }
 
   onClickView(i: number) {

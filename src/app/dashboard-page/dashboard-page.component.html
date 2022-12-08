@@ -13,6 +13,7 @@
 
 <div class="body-div">
   <div class="buttons-div">
+    <button class="dashbtn" (click)="changeShowTicketListType()">View {{ TicketListTypeButtonLabel}} Tickets</button>
     <button class="dashbtn" (click)="onCreateTicket()">CREATE</button>
     <button class="dashbtn" style="font-size: 30 pt" (click)="onRemindTicket()">
       ADD REMINDER
@@ -67,6 +68,7 @@
       [trackerFilter]="tracker"
       [statusFilter]="status"
       [searchedValueFilter]="searchedValue"
+      [showTicketListType]="showTicketListType"
     ></app-ticket-list>
   </div>
 </div>

@@ -10,7 +10,7 @@
                 </select>
             
         
-                <select class="dropdown" (change)="changeAssignee($event)">
+                <select class="dropdown" (change)="changeAssignee($event)" [value]="initialAssignee">
                     <option hidden selected>Assignee</option>
                     <option value="{{users[i]['userID']}}" *ngFor="let user of users; index as i">{{user.name}}</option>
                 </select>
