@@ -47,6 +47,7 @@ export class CreateTicketComponent {
     formData.append('createdAt', createdAt);
 
     this.ticketService.createTicket(formData).subscribe(result => {});
+    location.reload();
     this.createStatus.emit(false);
   }
 

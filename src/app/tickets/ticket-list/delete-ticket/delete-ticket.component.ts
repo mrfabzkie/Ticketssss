@@ -24,6 +24,7 @@ export class DeleteTicketComponent {
     ){}
 
   onClose(){
+    location.reload();
     this.deleteStatus.emit(false);
   }
 
