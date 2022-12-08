@@ -1,0 +1,78 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    border: 1px solid rgb(49, 45, 45);
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tbody>tr{
+    max-height: 50px;
+    height: 50px;
+  }
+  
+  tbody>tr>td{
+    text-align: center;
+  }
+  
+  th{
+    font-family: chathura;
+    font-weight: bold;
+    font-size: 50;
+    color: white;
+  }
+  
+  tbody{
+    height:100%;
+    overflow-y: scroll;
+  }
+  
+  .evenTableRow {
+    background-color: rgb(211, 211, 211, 0.3);
+    color: black;
+  }
+  
+  .oddTableRow {
+    background-color: rgb(137, 137, 137, 0.3);
+    color: black;
+  }
+  
+  
+  .ticket-body {
+    font-family: chathura;
+    background-image: linear-gradient(transparent 15.5%, white 15.5%, white 66.66%, white 66.66%);
+    padding-left: 0px;
+    margin-left: 1%;
+    height: 550px;
+    width: 90%;
+  }
+  
+  .ticket-body th {
+    border: none;
+  }
+  
+  .custom-text-button{
+    background-color: transparent;
+    color: blue;
+    border:0px;
+  }
+  
+  .custom-text-button:hover{
+    text-decoration:underline;
+  }
+  
+  .custom-delete-button{
+    background-color: transparent;
+    border:0px;
+    color: #FF392E;
+  }
+  
+  .custom-edit-button{
+    background-color: transparent;
+    border:0px;
+  }
+  
