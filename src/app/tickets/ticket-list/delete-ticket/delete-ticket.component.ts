@@ -22,6 +22,20 @@ export class DeleteTicketComponent {
   onClose(){
     this.deleteStatus.emit(false);
   }
+
+  constructor(
+    private ticketService: TicketService,
+
+  ){}
+
+  onDelete() {
+    let formData: FormData = new FormData();
+
+    formData.append('ticketID', this.deletedTicket.ticketID);
+    
+    this.ticketService.deleteTicket(formData).subscribe(result => {});
+    this.onClose();
+  }
 }
 
 
