@@ -25,7 +25,6 @@ export class UsersListComponent implements OnChanges, OnInit {
   selectedUser: any;
 
   isViewUser: boolean = false;
-  selectedUser: any;
   users$: any[] = [];
 
 
