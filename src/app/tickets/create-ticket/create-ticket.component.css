@@ -37,24 +37,13 @@ background-color: white;
 
   }
 
-.buttoncreate{
-    margin-right: 44%;
-    font-family: 'Arial';
-    color:white;
-    float: right;
-    margin-top:15px;
-    text-align: center;
-    background-color: #F12F2F;
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-}
-
 .subj {
     width: 56.4%;
     height: 40px;
     margin-bottom: 10px;
     border-radius: 5px;
+    border: none;
+    outline: none;
 }
 
 .assign {
@@ -63,4 +52,41 @@ background-color: white;
 
 textarea{
     border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.buttoncreate{
+    font-family: 'Arial';
+    color:white;
+    margin-top:15px;
+    
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.validButton{
+    background-color: transparent;
+    border: 2px solid #f12f2f;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.invalidButton{
+    background-color: gray;
+}
+
+.modal-body{
+    text-align: center;
+}
+
+.validButton:hover{
+    background-color: #f12f2f;
+    box-shadow: 0px 10px 25px rgb(175, 25, 25, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
 }

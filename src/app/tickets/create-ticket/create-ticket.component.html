@@ -22,7 +22,7 @@
         </form>
         
 
-        <button type='button' class="buttoncreate" (click)="onClose()" [disabled]="!form.valid">CREATE</button>
+        <button type='button' class="buttoncreate" (click)="onClose()" [disabled]="!form.valid" [ngClass]="form.valid ? 'validButton' : 'invalidButton'">CREATE</button>
     </div>
 </div>
 <div class="modal-background"></div>
