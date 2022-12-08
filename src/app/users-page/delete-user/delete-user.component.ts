@@ -20,7 +20,20 @@ export class DeleteUserComponent {
 
   @Output() deleteStatus = new EventEmitter<boolean>();
 
+  constructor(
+    private ticketService: TicketService,
+  ){}
+
   onClose(){
     this.deleteStatus.emit(false);
+  }
+
+  onDelete() {
+    let formData: FormData = new FormData();
+
+    formData.append('ticketID', this.deletedTicket.ticketID);
+    
+    this.ticketService.deleteTicket(formData).subscribe(result => {});
+    this.onClose();
   }
 }

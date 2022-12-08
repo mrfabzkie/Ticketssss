@@ -19,14 +19,14 @@ export class DeleteTicketComponent {
 
   @Output() deleteStatus = new EventEmitter<boolean>();
 
+  constructor(
+      private ticketService: TicketService,
+
+    ){}
+
   onClose(){
     this.deleteStatus.emit(false);
   }
-
-  constructor(
-    private ticketService: TicketService,
-
-  ){}
 
   onDelete() {
     let formData: FormData = new FormData();

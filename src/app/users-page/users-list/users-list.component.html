@@ -18,7 +18,7 @@
               View Info
             </button>
             <button class="custom-delete-button">
-              <span class="material-symbols-outlined"> delete </span>
+              <span class="material-symbols-outlined" (click)="onClickDelete(i)"> delete </span>
             </button>
             <button class="custom-edit-button">
               <span class="material-symbols-outlined" > edit </span>
@@ -29,3 +29,10 @@
     </table>
   </div>
   
+
+  <div *ngIf="isDeleting">
+    <app-delete-ticket
+      [deletedTicket]="selectedTicket"
+      (deleteStatus)="deleteStatus($event)"
+    ></app-delete-ticket>
+  </div>
