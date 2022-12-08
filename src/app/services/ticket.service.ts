@@ -60,4 +60,8 @@ export class TicketService {
   public deleteTicket(formData: any): Observable<any>{
     return this.http.post<any>(this.baseURL + '/delete', formData);
   }
+
+  public remindAgingTickets(formData: any): Observable<any>{
+    return this.http.post<any>(this.baseURL + '/remind/aging', formData);
+  }
 }
