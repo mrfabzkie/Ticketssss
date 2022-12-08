@@ -46,4 +46,8 @@ export class UserService {
       params: params,
     });
   }
+
+  public deleteUsers(formData: any): Observable<any>{
+    return this.http.post<any>(this.baseURL + '/delete', formData);
+  }
 }

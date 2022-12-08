@@ -19,6 +19,10 @@ export class UsersListComponent implements OnChanges, OnInit {
 
   @Input() searchedValueFilter: any;
   @Input() roleFilter: any;
+  @Input() users: any;
+
+  isDeleting: boolean = false;
+  selectedUser: any;
 
   isViewUser: boolean = false;
   selectedUser: any;
@@ -39,6 +43,15 @@ export class UsersListComponent implements OnChanges, OnInit {
   onClickView(i: number) {
     this.selectedUser = this.users$[i];
     this.isViewUser = true;
+  }
+
+  onClickDelete(i: number) {
+    this.selectedUser = this.users$[i];
+    this.isDeleting = true;
+  }
+
+  deleteStatus(value: any) {
+    this.isDeleting = value;
   }
 
   viewedStatus(value: any) {
