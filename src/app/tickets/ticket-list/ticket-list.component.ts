@@ -29,6 +29,7 @@ export class TicketListComponent implements OnChanges, OnInit {
   @Input() trackerFilter: any;
   @Input() statusFilter: any;
   @Input() showTicketListType: any;
+  @Input() users: any;
 
   isViewing: boolean = false;
   isDeleting: boolean = false;
