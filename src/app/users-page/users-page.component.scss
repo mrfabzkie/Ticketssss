@@ -40,7 +40,7 @@
     
     
   }
-  
+    
   h3 {
    
     color: white;
@@ -60,64 +60,65 @@
     font-style: normal;
     color: white;
     font-size: 100px;
-    padding-left: 63px;
+    padding-left: 145px;
     margin-top: .2%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     padding-top: 1%;
     letter-spacing: 5px;
     line-height: 50px;
   
   }
-
-  .dashboard-card{
-    padding-left: 63px;
-    cursor: pointer;
-    width: 100%;
-
+  
+  .body-div{
+    display: flex;
   }
-
-  .dashboard-card h2{
-    padding-left: 63px;
-    font-size: 30px;
+  
+  .ticket-list-div{
+    flex: 5;
+    padding-left: 130px;
+  }
+  
+  .buttons-div{
+    margin-left: 3%;
+    flex: 1;
+  }
+  
+  .bars-and-filters-div{
+    padding-left: 1%;
+  }
+  
+  .bars-and-filters-elements{
     font-family: 'Chathura' ;
-    width: 174px;
-    height: 50px;
-    margin-top: 0;
-    background-color: #240909;
-    color:white;
-    border-radius: 0px 0px 10px 10px;
+    font-style: normal;
+    font-weight: bold;
+    height: 7%;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 1%;
+    padding: 0;
   }
-
-.dashboard-card img{
-    cursor: pointer;
-    width: 237px;
-    height: 190px;
-    display: inline;
-    }
-
-  .users-card h2{
-    padding-left: 63px;
-    font-size: 30px;
-    font-family: 'Chathura' ;
-    width: 174px;
-    height: 50px;
-    margin-top: 0;
-    background-color: #240909;
-    color:white;
-    border-radius: 0px 0px 10px 10px;
+  
+  .bars-and-filters-elements:focus{
+    outline: none;
   }
-
-  .users-card{
-    padding-left: 63px;
-    cursor: pointer;
+  
+  .custom-search-bar{
+    width: 58%;
+    border: none;
+    background-color: #EBE9E9;
+    padding-left: 1%;
   }
-
-  .route-cards{
-  display: inline-block;
+  
+  .custom-dropdown{
+    width: 15%;
+    text-align: center;
+    background-color: #F12F2F;
+    color: white;
   }
-
-  .users-card img{
-
-    width: 20px;
+  
+  .custom-button{
+    width: 10%;
+    background-color: #F12F2F;
+    color: white;
   }
-
