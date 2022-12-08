@@ -72,6 +72,7 @@
   .dashboard-card{
     padding-left: 63px;
     cursor: pointer;
+    width: 100%;
 
   }
 
@@ -86,3 +87,37 @@
     color:white;
     border-radius: 0px 0px 10px 10px;
   }
+
+.dashboard-card img{
+    cursor: pointer;
+    width: 237px;
+    height: 190px;
+    display: inline;
+    }
+
+  .users-card h2{
+    padding-left: 63px;
+    font-size: 30px;
+    font-family: 'Chathura' ;
+    width: 174px;
+    height: 50px;
+    margin-top: 0;
+    background-color: #240909;
+    color:white;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .users-card{
+    padding-left: 63px;
+    cursor: pointer;
+  }
+
+  .route-cards{
+  display: inline-block;
+  }
+
+  .users-card img{
+
+    width: 20px;
+  }
+
