@@ -4,12 +4,8 @@ import {
   OnInit,
   OnChanges,
   SimpleChanges,
-  ChangeDetectionStrategy,
 } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { TicketService } from 'src/app/services/ticket.service';
-import { TicketStatusService } from 'src/app/services/ticketstatus.service';
-import { TrackerService } from 'src/app/services/tracker.service';
 import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-users-list',
@@ -19,7 +15,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersListComponent implements OnChanges, OnInit {
 
-  users$ : any []=[];
+  constructor(private userService: UserService) {}
 
   @Input() searchedValueFilter: any;
   @Input() roleFilter: any;
@@ -28,20 +24,25 @@ export class UsersListComponent implements OnChanges, OnInit {
   isDeleting: boolean = false;
   selectedUser: any;
 
-  constructor(
-    private userService: UserService,
-  ) {}
-  ngOnInit(): void {
+  isViewUser: boolean = false;
+  selectedUser: any;
+  users$: any[] = [];
 
-  }
-  
+
+  ngOnInit(): void {}
+
   ngOnChanges(changes: SimpleChanges): void {
-    this.userService.getAllSearchedUsers(this.searchedValueFilter,"").subscribe((result) => {
-      this.users$ = result['body']['data'];
-      console.log(this.users$);
-
-    });
+    this.userService
+      .getAllSearchedUsers(this.searchedValueFilter, '')
+      .subscribe((result) => {
+        this.users$ = result['body']['data'];
+      });
     console.log(changes);
+  }
+
+  onClickView(i: number) {
+    this.selectedUser = this.users$[i];
+    this.isViewUser = true;
   }
 
   onClickDelete(i: number) {
@@ -53,5 +54,7 @@ export class UsersListComponent implements OnChanges, OnInit {
     this.isDeleting = value;
   }
 
-
+  viewedStatus(value: any) {
+    this.isViewUser = value;
+  }
 }

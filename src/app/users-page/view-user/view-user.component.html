@@ -1,1 +1,31 @@
-<p>view-user works!</p>
+<div class="modal" id="view-ticket-modal">
+    <div class="modal-body">
+      <h1>View Ticket</h1>
+ 
+      <table>
+        <tr>
+          <th style="width: 20px; height: 40px">User ID</th>
+          <td> {{ viewedUser['userID'] }}</td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>{{ viewedUser['name'] }}</td>
+        </tr>
+        <tr>
+          <th>Role</th>
+          <td> {{ viewedUser['role'] }}</td>
+        </tr>
+      </table>
+      <button
+        type="close"
+        class="custom-red-round-button"
+        id="closeModal"
+        data-dismiss="modal"
+        (click)="onClose()"
+      >
+        CLOSE
+      </button>
+    </div>
+  </div>
+  <div class="modal-background" id="view-ticket-modal-background"></div>
+  
