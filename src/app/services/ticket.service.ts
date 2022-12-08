@@ -13,7 +13,7 @@ export class TicketService {
   constructor(private http: HttpClient) {}
 
   public createTicket(formData: any): Observable<any> {
-    return this.http.post<any>(this.baseURL + 'create', formData);
+    return this.http.post<any>(this.baseURL + '/create', formData);
   }
 
   public getAllSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
@@ -55,5 +55,9 @@ export class TicketService {
 
   public updateTicket(formData: FormData): Observable<any>{
     return this.http.post<any>(this.baseURL + '/update', formData);
+  }
+
+  public deleteTicket(formData: any): Observable<any>{
+    return this.http.post<any>(this.baseURL + '/delete', formData);
   }
 }
