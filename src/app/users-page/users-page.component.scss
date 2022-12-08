@@ -60,7 +60,7 @@
     font-style: normal;
     color: white;
     font-size: 100px;
-    padding-left: 63px;
+    padding-left: 145px;
     margin-top: .2%;
     margin-bottom: 4%;
     padding-top: 1%;
@@ -69,3 +69,56 @@
   
   }
   
+  .body-div{
+    display: flex;
+  }
+  
+  .ticket-list-div{
+    flex: 5;
+    padding-left: 130px;
+  }
+  
+  .buttons-div{
+    margin-left: 3%;
+    flex: 1;
+  }
+  
+  .bars-and-filters-div{
+    padding-left: 1%;
+  }
+  
+  .bars-and-filters-elements{
+    font-family: 'Chathura' ;
+    font-style: normal;
+    font-weight: bold;
+    height: 7%;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 1%;
+    padding: 0;
+  }
+  
+  .bars-and-filters-elements:focus{
+    outline: none;
+  }
+  
+  .custom-search-bar{
+    width: 58%;
+    border: none;
+    background-color: #EBE9E9;
+    padding-left: 1%;
+  }
+  
+  .custom-dropdown{
+    width: 15%;
+    text-align: center;
+    background-color: #F12F2F;
+    color: white;
+  }
+  
+  .custom-button{
+    width: 10%;
+    background-color: #F12F2F;
+    color: white;
+  }

@@ -10,4 +10,50 @@
   <div class="content">
     <p>USERS MANAGEMENT</p>
   </div>
-  
+  <div class="ticket-list-div">
+    <form [formGroup]="form">
+      <div class="bars-and-filters-div">
+        <input
+          type="text"
+          class="custom-search-bar bars-and-filters-elements"
+          placeholder="Search..."
+          formControlName="searchedValue"
+        />
+        <select
+          name="tracker"
+          id="tracker-select"
+          class="custom-dropdown bars-and-filters-elements"
+          formControlName="tracker"
+          (change)="changeTracker($event)"
+        >
+          <option value="">ROLE</option>
+          <option
+            value="{{ trackers$[i].tracker }}"
+            *ngFor="let tracker of trackers$; index as i"
+          >
+            {{ trackers$[i].description }}
+          </option>
+        </select>
+        <select
+          name="assignee"
+          id="assignee-select"
+          class="custom-dropdown bars-and-filters-elements"
+          formControlName="status"
+          (change)="changeStatus($event)"
+        >
+          <option value="">CREATE</option>
+          <option
+            value="{{ ticketStatus.status }}"
+            *ngFor="let ticketStatus of ticketStatus$; index as i"
+          >
+            {{ ticketStatus$[i].description }}
+          </option>
+        </select>
+      </div>
+    </form>
+    <app-ticket-list
+      [trackerFilter]="tracker"
+      [statusFilter]="status"
+      [searchedValueFilter]="searchedValue"
+    ></app-ticket-list>
+  </div>
