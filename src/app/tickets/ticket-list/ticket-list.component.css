@@ -27,8 +27,21 @@ th{
 }
 
 tbody{
-  height:100%;
-  overflow-y: scroll;
+  height: 470px;
+  width: 100%;
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+thead, tbody tr{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  width: calc(100% - 1em);
 }
 
 .evenTableRow {

@@ -1,51 +1,44 @@
 <div class="box"></div>
 
 <div class="redBox">
-    <div class="logo">
-        <img id="logo" src = "assets/logo.png" alt="alliance logo">    
+  <div class="logo">
+    <img id="logo" src="assets/logo.png" alt="alliance logo" />
+  </div>
+
+  <h1>Create Account</h1>
+
+  <form [formGroup]="form">
+    <div class="input-container">
+      <input type="text" required="" formControlName="userID"/>
+      <label>UserID</label>
     </div>
 
-
-    <h1>Create Account</h1>
-    
-
-    <form>
-        <div class="input-container">
-            <input type="text" required=""/>
-            <label>Name</label>		
-        </div>
-
-        <div class="input-container">		
-            <input type="text" required=""/>
-            <label>UserID</label>
-        </div>
-
-        <div class="input-container">		
-            <input type="password" required=""/>
-            <label>Password</label>
-        </div>
-        <div class="select-container">		
-            <select> 
-        <option>ROLE
-        </option>
-
-            </select>  
-            
-        </div>
-    </form>	
-
-    <br/>
-
-    <button type='button' class="buttoncreate" (click)="nav('menu')">SIGN UP</button>
-    <br/>
-    <div class="already-account">
-        <label style="margin-left: 4.6in;">already have an account? </label>
-        <button type="button" class="createaccount" (click)="nav('login')">LOGIN</button>
+    <div class="input-container">
+      <input type="password" required="" formControlName="password"/>
+      <label>Password</label>
     </div>
-   
+
+    <div class="input-container">
+      <input type="text" required="" formControlName="name"/>
+      <label>Name</label>
+    </div>
+    <div class="select-container">
+      <select (change)="changeRole($event)">
+        <option value="{{roles$[i]['role']}}" *ngFor="let role of roles$; index as i">{{role.description}}</option>
+      </select>
+    </div>
+  </form>
+
+  <br />
+
+  <button type="button" class="buttoncreate" (click)="onCreate()">
+    SIGN UP
+  </button>
+  <br />
+  <div class="already-account">
+    <label style="margin-left: 4.6in">already have an account? </label>
+    <button type="button" class="createaccount" (click)="nav('login')">
+      LOGIN
+    </button>
+  </div>
 </div>
-
-
-
-
-
