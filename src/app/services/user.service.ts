@@ -35,4 +35,15 @@ export class UserService {
   public getAllUsers(): Observable<any>{
     return this.http.get<any>(this.baseURL + '/all');
   }
+
+  public getAllSearchedUsers(searchedValue: string, role: string): Observable<any>{
+    const params = new HttpParams()
+    .set('name',searchedValue)
+    .set('role', role);
+
+    return this.http.get<any>(this.baseURL + '/search', {
+      observe: 'response',
+      params: params,
+    });
+  }
 }
