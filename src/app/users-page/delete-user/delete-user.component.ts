@@ -5,23 +5,23 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { TicketService } from 'src/app/services/ticket.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
   selector: 'app-delete-user',
   templateUrl: './delete-user.component.html',
   styleUrls: ['./delete-user.component.scss'],
-  providers: [TicketService],
+  providers: [UserService],
 })
 export class DeleteUserComponent {
 
-  @Input() deletedTicket: any;
+  @Input() deletedUser: any;
 
   @Output() deleteStatus = new EventEmitter<boolean>();
 
   constructor(
-    private ticketService: TicketService,
+    private userService: UserService,
   ){}
 
   onClose(){
@@ -31,9 +31,9 @@ export class DeleteUserComponent {
   onDelete() {
     let formData: FormData = new FormData();
 
-    formData.append('ticketID', this.deletedTicket.ticketID);
+    formData.append('userID', this.deletedUser.userID);
     
-    this.ticketService.deleteTicket(formData).subscribe(result => {});
+    this.userService.deleteUsers(formData).subscribe(result => {});
     this.onClose();
   }
 }

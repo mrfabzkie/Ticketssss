@@ -2,10 +2,10 @@
     <div class="modal-body">
         <img src="assets/delete.jpg"/>
         <p>Are you sure you want to delete</p>
-        <p>Ticket {{ deletedTicket.ticketID }}</p>
+        <p>Ticket {{ deletedUser.userID }}</p>
 
         <button type="button" class="btncancel" (click)="onClose()">CANCEL</button>
-        <button type="button" class="btn">CONFIRM</button>
+        <button type="button" class="btn" (click)="onDelete()">CONFIRM</button>
     </div>
 </div>
 

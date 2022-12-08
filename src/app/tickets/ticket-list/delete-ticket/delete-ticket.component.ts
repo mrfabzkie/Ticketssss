@@ -21,7 +21,6 @@ export class DeleteTicketComponent {
 
   constructor(
       private ticketService: TicketService,
-
     ){}
 
   onClose(){
