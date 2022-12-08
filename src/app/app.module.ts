@@ -18,6 +18,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delete-ticket.component';
 import { UsersPageComponent } from './users-page/users-page.component';
+import { UpdateUserComponent } from './users-page/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UsersPageComponent } from './users-page/users-page.component';
     CreateAccountComponent,
     DeleteTicketComponent,
     UsersPageComponent,
+    UpdateUserComponent,
   ],
   imports: [
     BrowserModule,
