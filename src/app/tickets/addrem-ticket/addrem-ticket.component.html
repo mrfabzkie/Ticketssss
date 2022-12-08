@@ -1,14 +1,11 @@
 <div class="modal">
     <div class="modal-body">
-        <h3>Add Reminder</h3>
-
-        <div class="ticketID">
-            <h1>Ticket ID: 201801732</h1>		
-        </div>
-        
-        <textarea id="description"></textarea>
+        <h3>Add Reminder to Aging Tickets</h3>    
+        <form  [formGroup]="form">
+            <textarea id="description" formControlName="description"></textarea>
+        </form>
         <br/>
-        <button type='button' class="buttoncreate" (click)="onClose()">REMIND</button>
+        <button type='button' class="buttoncreate" (click)="onClose()">SEND</button>
     </div>
 </div>
 <div class="modal-background"></div>
