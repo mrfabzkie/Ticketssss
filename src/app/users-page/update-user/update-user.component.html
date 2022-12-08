@@ -1,0 +1,29 @@
+
+<div class="modal">
+    <div class="modal-body">
+        <h2>Update Ticket</h2>
+
+        <h3>Ticket ID: 103</h3>
+        
+            <form>
+              
+
+                <select class="dropdown">
+                    <option value="1" hidden selected > Roles</option>
+                    <option value="2">In Progress</option>
+                    <option value="3">Resolved</option>
+                    <option value="4">Feedback</option>
+                    <option value="5">Closed</option>
+                    <option value="6">Rejected</option>
+                </select>
+            </form>
+            <br>
+
+            <input placeholder="userID" type="text" class="intsubject"/>
+            <input placeholder="password" type="password" class="intsubject"/>
+            <br/>
+            
+            <button type='button' class="buttoncreate" (click)="onClose()">UPDATE</button>
+    </div>
+</div>
+<div class="modal-background"></div>
