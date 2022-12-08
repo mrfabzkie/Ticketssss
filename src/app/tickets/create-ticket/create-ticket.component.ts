@@ -30,6 +30,7 @@ export class CreateTicketComponent {
 
   selectedTracker: string = '';
   selectedAssignee: string = '';
+  initialAssignee: Number = 0;
 
 
 
@@ -52,6 +53,7 @@ export class CreateTicketComponent {
 
   changeTracker(tracker: any){
     this.selectedTracker = tracker.target.value;
+    this.setInitialAssignee(this.selectedTracker);
   }
 
   changeAssignee(assignee: any){
@@ -60,6 +62,16 @@ export class CreateTicketComponent {
 
   get f() {
     return this.form.controls;
+  }
+
+  setInitialAssignee(tracker: any){
+    if (this.users.length != 0) {
+      let trackers = this.trackers;
+      var trackerResult = trackers.find((obj: any) => {
+        return obj['tracker'] == tracker;
+      })
+      this.initialAssignee = trackerResult['assignee'];
+    }
   }
 }
 
