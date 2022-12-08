@@ -20,6 +20,7 @@ import { DeleteTicketComponent } from './tickets/ticket-list/delete-ticket/delet
 import { UsersPageComponent } from './users-page/users-page.component';
 import { UpdateUserComponent } from './users-page/update-user/update-user.component';
 import { DeleteUserComponent } from './users-page/delete-user/delete-user.component';
+import { UsersListComponent } from './users-page/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DeleteUserComponent } from './users-page/delete-user/delete-user.compon
     UsersPageComponent,
     UpdateUserComponent,
     DeleteUserComponent,
+    UsersListComponent,
   ],
   imports: [
     BrowserModule,
