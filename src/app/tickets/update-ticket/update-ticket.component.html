@@ -1,28 +1,28 @@
 <div class="modal">
     <div class="modal-body">
         <h2>Update Ticket</h2>
-
-        <h3>Ticket ID: 103</h3>
-        
-            <form>
-              
-
-                <select class="dropdown">
-                    <option value="1" hidden selected > Roles</option>
-                    <option value="2">In Progress</option>
-                    <option value="3">Resolved</option>
-                    <option value="4">Feedback</option>
-                    <option value="5">Closed</option>
-                    <option value="6">Rejected</option>
-                </select>
-            </form>
-            <br>
-
-            <input placeholder="userID" type="text" class="intsubject"/>
-            <input placeholder="password" type="password" class="intsubject"/>
+        <form [formGroup]="form">
+            <span class="">
+                <h3>Ticket ID: {{selectedTicket.ticketID}}</h3>
+            </span>
+                <div class="form-header">
+                    <select  class="form-header-child dropdown" [(ngModel)]="selectedTicket.status" [ngModelOptions]="{standalone: true}" [(value)]="selectedTicket.status">
+                        <option value="{{ticketStatus[i]['status']}}" *ngFor="let status of ticketStatus; index as i"> {{status.description}}</option>
+                    </select> 
+                    <select  class="form-header-child dropdown" [(ngModel)]="selectedTicket.assignee" [ngModelOptions]="{standalone: true}" [(value)]="selectedTicket.assignee">
+                        <option value="{{users[i]['userID']}}" *ngFor="let user of users; index as i"> {{user.name}}</option>
+                    </select>  
+                    <select  class="form-header-child dropdown" [(ngModel)]="selectedTicket.tracker" [ngModelOptions]="{standalone: true}" [(value)]="selectedTicket.tracker">
+                        <option value="{{trackers[i]['tracker']}}" *ngFor="let tracker of trackers; index as i"  > {{tracker.description}}</option>
+                    </select>  
+                </div>
+                <div class="form-body">
+                    <input placeholder="subject..." type="text" class="input-userID form-body-child" formControlName="subject"/>
+                    <input placeholder="description..." type="text" class="input-password form-body-child" formControlName="description"/>
+                </div>
+                <button type='button' class="buttoncreate" (click)="onClose()" [disabled]="!form.valid">UPDATE</button>
             <br/>
-            
-            <button type='button' class="buttoncreate" (click)="onClose()">UPDATE</button>
+        </form>    
     </div>
 </div>
 <div class="modal-background"></div>
