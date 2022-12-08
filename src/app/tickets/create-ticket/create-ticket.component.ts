@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Ticket } from 'src/app/models/ticket';
@@ -34,6 +35,7 @@ export class CreateTicketComponent {
 
   onClose() {
     let formData: FormData = new FormData();
+    let createdAt = formatDate(new Date(), 'yyyy-MM-dd', 'en');
     
     formData.append('status', 'NEW');
     formData.append('tracker', this.selectedTracker);
@@ -41,6 +43,7 @@ export class CreateTicketComponent {
     formData.append('description', this.f.description.value!);
     formData.append('assignee', this.selectedAssignee);
     formData.append('requester', '11');
+    formData.append('createdAt', createdAt);
 
     this.ticketService.createTicket(formData).subscribe(result => {});
     this.createStatus.emit(false);
