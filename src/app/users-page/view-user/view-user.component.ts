@@ -18,26 +18,23 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ViewUserComponent implements OnChanges, OnInit {
 
-  @Input() viewedUser: any;
-  @Output() viewedStatus= new EventEmitter<boolean>();
-
-
-  onClose() {
-    this.viewedStatus.emit(false);
-    console.log("test");
-  }
   constructor(
     private userService: UserService,
   ) {}
 
-  ngOnInit(): void {
 
+  @Input() viewedUser: any;
+  @Output() viewedStatus= new EventEmitter<boolean>();
+
+
+  ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {}
+
+  onClose() {
+    this.viewedStatus.emit(false);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-    
-}
 
 }
 
