@@ -13,11 +13,6 @@
           background-color: red;
         }
 
-form {
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
 h2{
     margin: 0;
     
@@ -38,7 +33,6 @@ form {
     width: 150px;
     text-align: center;
     height: 40px;
-    margin-left: 0px;
     margin-bottom: 10px;
     margin-top: 10px;
     font-family: cursive, sans-serif;
@@ -51,33 +45,18 @@ form {
    
 }
 
-.intsubject {
-    margin-left: 2%;
-    height: 40px;
-    width: 50%;
-    border-radius: 15px;
-}
-
-.inttext {
-    margin-left: 2%;
-    height: 182px;
-    width: 63%;
-    border-radius: 15px;
-}
 
 #label {
     margin-left: 55px;
 }
 
 input{
-    margin-top:15px;
-    margin-bottom: 10px;
-    margin-left: 0px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     background-color: #ffffff;
     resize: none;
+    outline: none;
   }
 
 
@@ -85,8 +64,6 @@ input{
  
     font-family: 'Arial';
     color:white;
-    margin-top:35px;
-    margin-left: 33px;
     text-align: center;
     background-color: #F12F2F;
     width: 100px;
@@ -110,3 +87,24 @@ input{
 .assign {
     margin-left: 20px;
 }
+
+.form-body{
+    display: inline-block;
+    width: 100%;
+}
+
+.form-header{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.form-body-child{
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+

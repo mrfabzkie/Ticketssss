@@ -1,22 +1,20 @@
 <div class="modal">
   <div class="modal-body">
     <h2>Update Ticket</h2>
-
-    <h3>Ticket ID: 103</h3>
-
     <form [formGroup]="form">
-      <select class="dropdown" [(ngModel)]="selectedUser.role" [ngModelOptions]="{standalone: true}" [(value)]="selectedUser.role" (change)="changeRole($event)">
-        <option  value="{{ roles[i].role }}" *ngFor="let role of roles; index as i">
-          {{ role["description"] }}
-        </option>
-      </select>
-
-      <br />
-
-      <input placeholder="userID" type="text" class="intsubject" />
-      <input placeholder="password" type="password" class="intsubject" />
-      <br />
+        
+        <div class="form-header">
+            <h3>User ID: {{selectedUser.userID}}</h3>
+            <select class="dropdown" [(ngModel)]="selectedUser.role" [ngModelOptions]="{standalone: true}" [(value)]="selectedUser.role" (change)="changeRole($event)">
+                <option  value="{{ roles[i].role }}" *ngFor="let role of roles; index as i"> {{ role["description"] }}</option>
+              </select>
+        </div>
+        <div class="form-body">
+            <input placeholder="name" type="text" class="input-name form-body-child" formControlName="name"/>
+            <input placeholder="password" type="password" class="input-password form-body-child" formControlName="password"/>
+        </div>
     </form>
+    <br>
     <button type="button" class="buttoncreate" (click)="onClose()">
       UPDATE
     </button>

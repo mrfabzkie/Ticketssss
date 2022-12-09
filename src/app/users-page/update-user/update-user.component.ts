@@ -18,7 +18,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UpdateUserComponent implements OnChanges{
   @Input() selectedUser: any;
-  @Output() updatedUser = new EventEmitter<boolean>();
+  @Output() updatedStatus = new EventEmitter<boolean>();
   @Input() roles : any [] = [];
 
 
@@ -31,8 +31,8 @@ export class UpdateUserComponent implements OnChanges{
 
   
   form = this.fb.group({
-    name: ['selectedUser.name', [Validators.required]],
-    password: ['selectedUser.password', [Validators.required]],
+    name: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
   
 
@@ -48,17 +48,16 @@ export class UpdateUserComponent implements OnChanges{
 
 
   onClose(){
-
-   let formData = new FormData();
+    let formData = new FormData();
    
-  formData.append('userID', this.selectedUser.userID);
-  formData.append('password', this.f.password.value!);
-  formData.append('name', this.f.name.value!);
-  formData.append('role', this.selectedRole);
+    formData.append('userID', this.selectedUser.userID);
+    formData.append('password', this.f.password.value!);
+    formData.append('name', this.f.name.value!);
+    formData.append('role', this.selectedRole);
 
-
-  this.userService.updatedUser(formData).subscribe(()=>{});
-   this.updatedUser.emit(false);
+    this.userService.updatedUser(formData).subscribe(()=>{});
+    location.reload();
+    this.updatedStatus.emit(false);
  }
 
 
