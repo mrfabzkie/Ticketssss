@@ -16,7 +16,7 @@ import { UserService } from 'src/app/services/user.service';
 export class DeleteUserComponent {
 
   @Input() deletedUser: any;
-
+  
   @Output() deleteStatus = new EventEmitter<boolean>();
 
   constructor(

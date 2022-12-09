@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody >
-        <tr *ngFor="let user of users$ ; index as i " [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
+        <tr *ngFor="let user of users$ ; index as i" [ngClass]="i % 2 == 0 ? 'evenTableRow' : 'oddTableRow'">
           <td width="10%">{{ user["userID"] }}</td>
           <td width="25%">{{ user["name"] }}</td>
           <td width="25%">{{ user["role"] }}</td>
@@ -22,7 +22,7 @@
               <span class="material-symbols-outlined" (click)="onClickDelete(i)"> delete </span>
             </button>
             <button class="custom-edit-button">
-              <span class="material-symbols-outlined"> edit </span>
+              <span class="material-symbols-outlined" (click)="onUpdateView(i)"> edit </span>
             </button>
           </td>
         </tr>
@@ -39,7 +39,12 @@
     [viewedUser]="selectedUser"
     ></app-view-user>
   </div>
-  
+
+    <app-update-user  *ngIf="isUpdateUser"
+    (updatedStatus)="updatedStatus($event)"
+    [selectedUser]="selectedUser"
+    [roles]="roles"
+    ></app-update-user>
 
   
 

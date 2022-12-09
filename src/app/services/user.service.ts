@@ -8,6 +8,8 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 @Injectable()
 export class UserService {
+ 
+
   baseURL = 'http://localhost:8080/user';
   private loggedInUser = new BehaviorSubject("0");
 
@@ -58,6 +60,11 @@ export class UserService {
     return this.http.post<any>(this.baseURL + '/register', formData);
   }
 
+
+  public updatedUser(formData: any) :Observable<any> {
+    return this.http.post<any>(this.baseURL + '/update', formData);
+
+
   public setLoggedInUser(userID: string){
     this.loggedInUser.next(userID);
   }
@@ -68,3 +75,4 @@ export class UserService {
 
 
 }
+
