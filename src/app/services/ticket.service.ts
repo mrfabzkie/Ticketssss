@@ -16,12 +16,13 @@ export class TicketService {
     return this.http.post<any>(this.baseURL + '/create', formData);
   }
 
-  public getAllSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any> {
+  public getAllSearchedTicket(searchedValue: any, tracker: any, status: any, subject: any): Observable<any> {
 
     const params = new HttpParams()
       .set('description',searchedValue)
       .set('tracker', tracker)
-      .set('status', status);
+      .set('status', status)
+      .set('subject', subject);
 
     return this.http.get<any>(this.baseURL + '/all',{
       observe: 'response',
@@ -29,11 +30,12 @@ export class TicketService {
     });
   }
 
-  public getActiveSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any>{
+  public getActiveSearchedTicket(searchedValue: any, tracker: any, status: any, subject: any): Observable<any>{
     const params = new HttpParams()
     .set('description',searchedValue)
     .set('tracker', tracker)
-    .set('status', status);
+    .set('status', status)
+    .set('subject', subject);
 
     return this.http.get<any>(this.baseURL + '/active', {
       observe: 'response',
@@ -41,11 +43,12 @@ export class TicketService {
     });
   }
 
-  public getAgingSearchedTicket(searchedValue: any, tracker: any, status: any): Observable<any>{
+  public getAgingSearchedTicket(searchedValue: any, tracker: any, status: any, subject: any): Observable<any>{
     const params = new HttpParams()
     .set('description',searchedValue)
     .set('tracker', tracker)
-    .set('status', status);
+    .set('status', status)
+    .set('subject', subject);
 
     return this.http.get<any>(this.baseURL + '/aging', {
       observe: 'response',

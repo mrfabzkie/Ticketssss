@@ -6,7 +6,7 @@ import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-create-account',
-  providers: [UserService, RoleService],
+  providers: [RoleService],
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.scss']
 })
