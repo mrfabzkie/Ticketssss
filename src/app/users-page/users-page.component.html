@@ -20,18 +20,31 @@
           formControlName="searchedValue"
         />
         <select
-          name="tracker"
-          id="tracker-select"
+          name="role"
+          id="role-select"
           class="custom-dropdown bars-and-filters-elements"
           formControlName="role"
           (change)="changeRole($event)"
         >
-          <option value="">ROLE</option>
+        <option value="">ROLE</option>
+        
+          <option value=""
+          value="{{ roles$[i].role}}"
+          *ngFor="let role of roles$; index as i"
+        >
+          {{ roles$[i].description }}
+      </option>
         </select>
       </div>
     </form>
   </div>
-  <app-users-list [searchedValueFilter]="searchedValue">
+     <app-users-list 
+     [searchedValueFilter]="searchedValue"
+     [roleFilter]="selectedRole"
+     [roles]="roles$"
+     >
    
   </app-users-list>
+
+  
   

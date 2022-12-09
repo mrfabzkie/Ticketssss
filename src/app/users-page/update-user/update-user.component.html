@@ -8,13 +8,8 @@
             <form>
               
 
-                <select class="dropdown">
-                    <option value="1" hidden selected > Roles</option>
-                    <option value="2">In Progress</option>
-                    <option value="3">Resolved</option>
-                    <option value="4">Feedback</option>
-                    <option value="5">Closed</option>
-                    <option value="6">Rejected</option>
+                <select class="dropdown" [(ngModel)]="selectedUser['role']" [ngModelOptions]="{standalone: true}" [(value)]="selectedUser['role']" (change)="changeRole($event)">
+                     <option value="{{ roles[i].role}}" *ngFor="let role of roles; index as i">{{ roles[i].description }}</option>
                 </select>
             </form>
             <br>

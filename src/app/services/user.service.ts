@@ -8,6 +8,8 @@ const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 @Injectable()
 export class UserService {
+ 
+
   baseURL = 'http://localhost:8080/user';
 
   constructor(private http: HttpClient) {}
@@ -55,4 +57,12 @@ export class UserService {
     console.log('register?');
     return this.http.post<any>(this.baseURL + '/register', formData);
   }
+
+  public updatedUser(formData: any) :Observable<any> {
+    return this.http.post<any>(this.baseURL + '/update', formData);
+
+  }
+
+
 }
+
