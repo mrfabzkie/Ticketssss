@@ -63,7 +63,7 @@ export class UserService {
 
   public updatedUser(formData: any) :Observable<any> {
     return this.http.post<any>(this.baseURL + '/update', formData);
-
+  }
 
   public setLoggedInUser(userID: string){
     this.loggedInUser.next(userID);
