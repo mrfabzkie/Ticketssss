@@ -22,6 +22,7 @@ import { UpdateUserComponent } from './users-page/update-user/update-user.compon
 import { DeleteUserComponent } from './users-page/delete-user/delete-user.component';
 import { UsersListComponent } from './users-page/users-list/users-list.component';
 import { ViewUserComponent } from './users-page/view-user/view-user.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,9 @@ import { ViewUserComponent } from './users-page/view-user/view-user.component';
     AppRoutingModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
