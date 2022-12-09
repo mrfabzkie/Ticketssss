@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TicketService } from 'src/app/services/ticket.service';
 import { TicketStatusService } from 'src/app/services/ticketstatus.service';
 import { TrackerService } from 'src/app/services/tracker.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-ticket-list',
@@ -22,8 +23,19 @@ export class TicketListComponent implements OnChanges, OnInit {
     private ticketService: TicketService,
     private dialog: MatDialog,
     private trackerService: TrackerService,
-    private ticketStatusService: TicketStatusService
-  ) {}
+    private ticketStatusService: TicketStatusService,
+    private userService: UserService,
+  ) {
+    const data = this.userService.getLoggedInUser();
+    data.subscribe({
+      next:(result: string)=>{
+        this.loggedInUser = result;
+      },
+      error: (err:any)=>{
+        console.log(err);
+      }
+    });
+  }
 
   @Input() searchedValueFilter: any;
   @Input() trackerFilter: any;
@@ -39,6 +51,8 @@ export class TicketListComponent implements OnChanges, OnInit {
   trackers$: any[] = [];
   status$: any[] = [];
 
+  loggedInUser: string = "";
+
   ngOnInit(): void {
     this.trackerService.getAllTrackers().subscribe((result) => {
       this.trackers$ = result['data'];
@@ -49,6 +63,7 @@ export class TicketListComponent implements OnChanges, OnInit {
       this.status$ = result['data'];
       this.convertToStatusDescription();
     });
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -57,7 +72,8 @@ export class TicketListComponent implements OnChanges, OnInit {
         .getAllSearchedTicket(
           this.searchedValueFilter,
           this.trackerFilter,
-          this.statusFilter
+          this.statusFilter,
+          this.loggedInUser
         )
         .subscribe((result) => {
           this.tickets$.splice(0);
@@ -70,7 +86,8 @@ export class TicketListComponent implements OnChanges, OnInit {
         .getActiveSearchedTicket(
           this.searchedValueFilter,
           this.trackerFilter,
-          this.statusFilter
+          this.statusFilter,
+          this.loggedInUser
         )
         .subscribe((result) => {
           this.tickets$.splice(0);
@@ -83,7 +100,8 @@ export class TicketListComponent implements OnChanges, OnInit {
       .getAgingSearchedTicket(
         this.searchedValueFilter,
         this.trackerFilter,
-        this.statusFilter
+        this.statusFilter,
+        this.loggedInUser
       )
       .subscribe((result) => {
         this.tickets$.splice(0);
