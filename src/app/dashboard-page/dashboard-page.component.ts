@@ -15,7 +15,7 @@ enum TicketListType {
 
 @Component({
   selector: 'app-dashboard-page',
-  providers: [TrackerService, TicketStatusService, UserService],
+  providers: [TrackerService, TicketStatusService],
   templateUrl: './dashboard-page.component.html',
   styleUrls: ['./dashboard-page.component.css'],
 })

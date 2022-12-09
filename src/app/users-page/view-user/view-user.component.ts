@@ -14,7 +14,6 @@ import { UserService } from 'src/app/services/user.service';
   selector: 'app-view-user',
   templateUrl: './view-user.component.html',
   styleUrls: ['./view-user.component.scss'],
-  providers: [ UserService],
 })
 export class ViewUserComponent implements OnChanges, OnInit {
 

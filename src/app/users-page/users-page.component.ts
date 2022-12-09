@@ -10,7 +10,7 @@ import { TicketStatusService } from '../services/ticketstatus.service';
 
 @Component({
   selector: 'app-users-page',
-  providers: [UserService, TrackerService, TicketService, TicketStatusService],
+  providers: [ TrackerService, TicketService, TicketStatusService],
   templateUrl: './users-page.component.html',
   styleUrls: ['./users-page.component.scss']
 })

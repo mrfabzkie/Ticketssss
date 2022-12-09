@@ -16,7 +16,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 
 @Component({
   selector: 'app-view-ticket',
-  providers: [TicketService, UserService],
+  providers: [TicketService],
   templateUrl: './view-ticket.component.html',
   styleUrls: ['./view-ticket.component.css'],
 })

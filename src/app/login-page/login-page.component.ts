@@ -7,7 +7,6 @@ import { TicketService } from '../services/ticket.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  providers: [UserService],
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
