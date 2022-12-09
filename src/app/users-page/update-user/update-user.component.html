@@ -1,24 +1,25 @@
-
 <div class="modal">
-    <div class="modal-body">
-        <h2>Update Ticket</h2>
+  <div class="modal-body">
+    <h2>Update Ticket</h2>
 
-        <h3>Ticket ID: 103</h3>
-        
-            <form>
-              
+    <h3>Ticket ID: 103</h3>
 
-                <select class="dropdown" [(ngModel)]="selectedUser['role']" [ngModelOptions]="{standalone: true}" [(value)]="selectedUser['role']" (change)="changeRole($event)">
-                     <option value="{{ roles[i].role}}" *ngFor="let role of roles; index as i">{{ roles[i].description }}</option>
-                </select>
-            </form>
-            <br>
+    <form [formGroup]="form">
+      <select class="dropdown" [(ngModel)]="selectedUser.role" [ngModelOptions]="{standalone: true}" [(value)]="selectedUser.role" (change)="changeRole($event)">
+        <option  value="{{ roles[i].role }}" *ngFor="let role of roles; index as i">
+          {{ role["description"] }}
+        </option>
+      </select>
 
-            <input placeholder="userID" type="text" class="intsubject"/>
-            <input placeholder="password" type="password" class="intsubject"/>
-            <br/>
-            
-            <button type='button' class="buttoncreate" (click)="onClose()">UPDATE</button>
-    </div>
+      <br />
+
+      <input placeholder="userID" type="text" class="intsubject" />
+      <input placeholder="password" type="password" class="intsubject" />
+      <br />
+    </form>
+    <button type="button" class="buttoncreate" (click)="onClose()">
+      UPDATE
+    </button>
+  </div>
 </div>
 <div class="modal-background"></div>

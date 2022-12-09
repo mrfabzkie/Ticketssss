@@ -22,9 +22,7 @@ export class UpdateUserComponent implements OnChanges{
   @Input() roles : any [] = [];
 
 
-  selectedRole: any = "";
-
-  selectedAssignee: any;
+  selectedRole: any;
 
   constructor(
     private userService: UserService,
@@ -39,15 +37,13 @@ export class UpdateUserComponent implements OnChanges{
   
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.roles);
-    console.log(this.selectedUser);
     this.f.name.setValue(this.selectedUser.name);
     this.f.password.setValue(this.selectedUser.password);
   }
 
   ngOnInit(){
-    this.selectedUser = this.selectedRole.role;
-  }
+    this.selectedRole = this.selectedUser.role;
+    }
 
 
 
@@ -72,5 +68,6 @@ export class UpdateUserComponent implements OnChanges{
 }
 changeRole(role: any){
   this.selectedRole = role.target.value;
+  console.log(this.selectedRole);
 }
 }
