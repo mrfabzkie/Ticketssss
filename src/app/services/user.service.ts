@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
 import { User } from '../models/user';
 
 const headers = new HttpHeaders().set('Content-Type', 'application/json');
@@ -11,6 +11,8 @@ export class UserService {
  
 
   baseURL = 'http://localhost:8080/user';
+  private loggedInUser = new BehaviorSubject("0");
+
 
   constructor(private http: HttpClient) {}
 
@@ -58,9 +60,17 @@ export class UserService {
     return this.http.post<any>(this.baseURL + '/register', formData);
   }
 
+
   public updatedUser(formData: any) :Observable<any> {
     return this.http.post<any>(this.baseURL + '/update', formData);
 
+
+  public setLoggedInUser(userID: string){
+    this.loggedInUser.next(userID);
+  }
+
+  public getLoggedInUser(){
+    return this.loggedInUser.asObservable();
   }
 
 

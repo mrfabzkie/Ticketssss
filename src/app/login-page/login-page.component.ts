@@ -7,7 +7,6 @@ import { TicketService } from '../services/ticket.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  providers: [UserService],
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
@@ -31,9 +30,14 @@ export class LoginPageComponent {
       .loginUser(Number(this.f.userID.value!), this.f.password.value!)
       .subscribe((result) => {
         if (result['body']['data'] != null) {
+          this.setUser(result['body']['data']['userID']);
           this.router.navigate(['home']);
         }
       });
+  }
+
+  setUser(data: any){
+    this.userService.setLoggedInUser(data);
   }
 
   get f() {

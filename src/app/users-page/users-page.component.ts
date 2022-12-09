@@ -11,7 +11,7 @@ import { RoleService } from '../services/role.service';
 
 @Component({
   selector: 'app-users-page',
-  providers: [UserService, TrackerService, TicketService, TicketStatusService,RoleService],
+  providers: [ TrackerService, TicketService, TicketStatusService, RoleService],
   templateUrl: './users-page.component.html',
   styleUrls: ['./users-page.component.scss']
 })

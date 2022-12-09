@@ -12,7 +12,6 @@ import { UserService } from 'src/app/services/user.service';
   selector: 'app-delete-user',
   templateUrl: './delete-user.component.html',
   styleUrls: ['./delete-user.component.scss'],
-  providers: [UserService],
 })
 export class DeleteUserComponent {
 
