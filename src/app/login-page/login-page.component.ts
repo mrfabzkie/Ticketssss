@@ -31,9 +31,14 @@ export class LoginPageComponent {
       .loginUser(Number(this.f.userID.value!), this.f.password.value!)
       .subscribe((result) => {
         if (result['body']['data'] != null) {
+          this.setUser(result['body']['data']['userID']);
           this.router.navigate(['home']);
         }
       });
+  }
+
+  setUser(data: any){
+    this.userService.setLoggedInUser(data);
   }
 
   get f() {
